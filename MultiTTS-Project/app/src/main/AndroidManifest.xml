@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="org.nobody.multitts" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:maxSdkVersion="22" android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:maxSdkVersion="22" android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+    </queries>
+    <permission android:name="org.nobody.multitts.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="org.nobody.multitts.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <uses-permission android:name="com.vivo.aiengine.permission.READ_AWARE_PROVIDER"/>
+    <uses-permission android:name="com.vivo.aiengine.permission.WRITE_AWARE_PROVIDER"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <application android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="true" android:grantUriPermissions="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="org.nobody.multitts.AppContext" android:requestLegacyExternalStorage="true" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.MultiTTS" android:usesCleartextTraffic="true">
+        <activity android:exported="false" android:name="org.nobody.multitts.ui.other.LoginActivity" android:theme="@style/Theme.MultiTTS.NoActionBar"/>
+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="mediaPlayback" android:name="org.nobody.multitts.service.ForwardService"/>
+        <service android:exported="true" android:icon="@drawable/ic_transfer" android:label="@string/quick_http" android:name="org.nobody.multitts.service.QuickHttpTileService" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE" android:value="true"/>
+        </service>
+        <activity android:exported="false" android:label="@string/title_activity_settings" android:name="org.nobody.multitts.ui.setting.SettingActivity" android:theme="@style/Theme.MultiTTS.NoActionBar">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <provider android:authorities="org.nobody.multitts" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="org.nobody.multitts.ui.main.MainActivity" android:theme="@style/Theme.MultiTTS.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.speech.tts.engine.CONFIGURE_ENGINE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:name="org.nobody.multitts.ui.role.RoleActivity" android:theme="@style/Theme.MultiTTS.NoActionBar"/>
+        <activity android:exported="true" android:name="org.nobody.multitts.ui.voicepool.VoicePoolActivity" android:theme="@style/Theme.MultiTTS.NoActionBar"/>
+        <activity android:exported="true" android:name="org.nobody.multitts.ui.engine.EngineActivity" android:theme="@style/Theme.MultiTTS.NoActionBar"/>
+        <activity android:exported="true" android:name="org.nobody.multitts.ui.replace.ReplaceActivity" android:theme="@style/Theme.MultiTTS.NoActionBar"/>
+        <activity android:exported="true" android:name="org.nobody.multitts.ui.other.TipsActivity" android:theme="@style/Theme.MultiTTS.NoActionBar"/>
+        <activity android:exported="false" android:name="org.nobody.multitts.ui.other.LogsActivity" android:theme="@style/Theme.MultiTTS.NoActionBar"/>
+        <activity android:exported="true" android:name="org.nobody.multitts.ui.other.GetSampleText">
+            <intent-filter>
+                <action android:name="android.speech.tts.engine.GET_SAMPLE_TEXT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:label="@string/action_import" android:name="org.nobody.multitts.ui.other.DownloadVoiceData" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.speech.tts.engine.INSTALL_TTS_DATA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="app"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="application/zip"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*"/>
+                <data android:scheme="app"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="*/*"/>
+                <data android:pathAdvancedPattern=".*.[zZ][iI][pP]"/>
+                <data android:pathPattern=".*.zip"/>
+                <data android:pathPattern=".*.ZIP"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:label="CheckVoiceData" android:name="org.nobody.multitts.ui.other.CheckVoiceData">
+            <intent-filter>
+                <action android:name="android.speech.tts.engine.CHECK_TTS_DATA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="true" android:foregroundServiceType="mediaPlayback" android:label="@string/app_name" android:name="org.nobody.multitts.service.TTSService">
+            <intent-filter>
+                <action android:name="android.intent.action.TTS_SERVICE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.speech.tts" android:resource="@xml/tts_engine"/>
+        </service>
+        <provider android:authorities="org.nobody.multitts.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="okhttp3.internal.platform.PlatformInitializer" android:value="androidx.startup"/>
+        </provider>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="org.nobody.multitts.microsoft" android:exported="false" android:name="com.microsoft.cognitiveservices.speech.util.InternalContentProvider"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+    </application>
+</manifest>

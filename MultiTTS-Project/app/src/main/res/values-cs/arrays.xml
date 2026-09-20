@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Nastavení</item>
+        <item>Změnit hlas</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Angličtina</item>
+        <item>Čínština (zjednodušená)</item>
+        <item>Španělština (Španělsko)</item>
+        <item>Španělština (EU)</item>
+        <item>Španělština (Kolumbie)</item>
+        <item>Španělština (USA)</item>
+        <item>Arabština</item>
+        <item>Vietnamština (Vietnam)</item>
+        <item>Bengálština (Indie)</item>
+        <item>Gudžarátština (Indie)</item>
+        <item>Hindština (Indie)</item>
+        <item>Kannadština (Indie)</item>
+        <item>Malajálamština (Indie)</item>
+        <item>Maráthština (Indie)</item>
+        <item>Nepálština (Nepál)</item>
+        <item>Urijština (Indie)</item>
+        <item>Paňdžábština (Indie)</item>
+        <item>Tamilština (Indie)</item>
+        <item>Telugština (Indie)</item>
+        <item>Urdština (Pákistán)</item>
+        <item>Khmerština (Kambodža)</item>
+        <item>Ukrajinština (Ukrajina)</item>
+        <item>Turečtina (Turecko)</item>
+        <item>Thajština (Thajsko)</item>
+        <item>Portugalština (Brazílie)</item>
+        <item>Ruština (Rusko)</item>
+        <item>Filipínština (Filipíny)</item>
+        <item>Němčina (Německo)</item>
+        <item>Čeština (Česko)</item>
+        <item>Nizozemština (Nizozemsko)</item>
+        <item>Francouzština (Francie)</item>
+        <item>Italština (Itálie)</item>
+        <item>Polština (Polsko)</item>
+        <item>Indonéština (Indonésie)</item>
+        <item>Centrální kurdština (کوردیی ناوەندی)</item>
+        <item>Švédština (Švédsko)</item>
+        <item>Kurmándží (Kurdî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Učení nových slov</item>
+        <item>Model rozpoznávání objektů</item>
+    </string-array>
+</resources>

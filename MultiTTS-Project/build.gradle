@@ -1,0 +1,8 @@
+// 根工程：只做插件声明，实际构建逻辑在 app/build.gradle
+plugins {
+    id 'com.android.application' version '8.13.2' apply false
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.layout.buildDirectory
+}

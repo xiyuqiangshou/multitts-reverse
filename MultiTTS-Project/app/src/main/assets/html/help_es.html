@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Help</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: __FONT_COLOR__;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Operación básica</h4>
+    <ul>
+        <li>Haga clic para seleccionar/deseleccionar el motor de síntesis principal.</li>
+        <li>Mantenga pulsado para seleccionar/deseleccionar el motor de síntesis de diálogos.</li>
+        <li>Mantenga presionado el avatar para editar el hablante.</li>
+        <li>Mantenga presionado el ícono fuera de línea/en línea para eliminar el altavoz</li>
+        <li>Mantenga presionado el nombre del orador y arrástrelo hacia arriba o hacia abajo para
+            ordenar
+        </li>
+        <li>Mantenga presionado el nombre del orador y deslícelo hacia la izquierda y hacia la
+            derecha para eliminarlo.
+        </li>
+        <li>Para otras listas, deslice hacia la izquierda y hacia la derecha para eliminar, arrastre
+            hacia arriba y hacia abajo para ordenar
+        </li>
+        <li>La interfaz principal se despliega en la parte superior de la lista para mostrar la
+            interfaz de administración de lotes.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Función descriptiva</h4>
+    <ul>
+        <li>Importar datos: seleccione un paquete comprimido que contenga datos de motor compatibles
+            para importar. La primera capa del archivo zip debe contener un archivo config.yaml
+            válido.
+        </li>
+        <li>Reemplazo: la pronunciación de las palabras se puede corregir en esta interfaz, que
+            admite tanto el reemplazo normal como el reemplazo regular.
+        </li>
+        <li>Música de fondo: reproduzca música de fondo mientras sintetiza la voz.</li>
+        <li>Gestión de roles: agregue reglas para identificar roles en el texto que se leerá en voz
+            alta y utilice hablantes específicos para leer en voz alta.
+        </li>
+        <li>Grupo de voces: para cada personaje específico que coincide con un rol abstracto, se
+            selecciona una voz del grupo de voces y se asigna a ese personaje.
+        </li>
+        <li>Gestión de motores: edite, agregue, elimine, ordene y exporte datos para motores.</li>
+        <li>Recargar datos: Vuelva a leer el archivo de configuración y cargue los datos. Por
+            defecto, se carga desde la base de datos.
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Gestión de roles</h4>
+    <ul>
+        <li>Nombre del rol: el nombre del rol que debe coincidir.</li>
+        <li>Expresión regular de rol: una expresión regular que coincide con el nombre del rol. Si
+            no se completa, se utiliza el valor del nombre del rol.
+        </li>
+        <li>
+            Rol abstracto: cuando no está habilitado, todos los personajes coincidentes usarán la
+            misma voz; cuando está habilitado, significa que se trata de un rol abstracto
+            (correspondiente a varios personajes específicos) y cada personaje específico extraerá
+            una voz del grupo de voces.
+        </li>
+        <li>Coincidencia anticipada: la regla coincidirá con el texto anterior a la conversación.
+        </li>
+        <li>Coincidencia de búsqueda retrospectiva: la regla coincidirá con el texto después de la
+            conversación.
+        </li>
+        <li>El software primero realizará todos los partidos hacia adelante y solo realizará
+            partidos hacia atrás cuando no haya resultados de los partidos hacia adelante.
+        </li>
+        <li>En la interfaz de administración de funciones, mantenga presionado el botón Agregar para
+            agregar hablantes de idiomas candidatos.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Mantenimiento de el motor</h4>
+    <ul>
+        <li>Tipo: Tipo de motor. Actualmente, sólo se puede agregar el motor http.</li>
+        <li>Código: La representación interna del motor. Utilice caracteres alfanuméricos y guiones
+            bajos.
+        </li>
+        <li>Encabezado de solicitud: el encabezado de solicitud utilizado al enviar una solicitud
+            http.
+        </li>
+        <li>URL: enlace http. Por favor incluya expresiones javascript en {{}}.</li>
+        <li>Valores citados admitidos en URL:
+            <ul>
+                <li>voiceCode: código de altavoz</li>
+                <li>SpeakText: El texto a sintetizar.</li>
+                <li>SpeakSpeed: velocidad de habla, rango de valores 0~100</li>
+                <li>talkVolume: volumen, rango de valores 0~100</li>
+                <li>params: matriz de parámetros, correspondiente a los parámetros del hablante, que
+                    han sido segmentados
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Piscina de voces</h4>
+    <ul>
+        <li>Rol abstracto: rol abstracto definido en la gestión de roles.</li>
+        <li>Voz del Personaje: Cada persona concreta correspondiente al personaje abstracto tendrá
+            una voz seleccionada entre las voces del mismo grupo que tiene asignadas.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Ajustes</h4>
+    <ul>
+        <li>Reglas de coincidencia de roles: se utilizan para filtrar contextos legales al hacer
+            coincidir roles de diálogo.
+        </li>
+        <li>Análisis de la estructura gramatical (solo admite chino): ingrese un fragmento de texto,
+            etiquete el texto con partes de la oración y obtenga la estructura gramatical de la
+            oración. Para conocer la tabla de partes del discurso, consulte el final de la ayuda.
+        </li>
+        <li>
+            Asigne voces automáticamente: después de reconocer a una persona, seleccione
+            automáticamente voces del grupo de roles (primero debe definir roles abstractos y
+            configurar el grupo de roles). La relación de asignación se almacenará en caché hasta
+            que un nuevo registro la sobrescriba.
+        </li>
+        <li>
+            Análisis de caracteres de texto (solo admite chino): analiza nuevas palabras en el
+            texto. El proceso de análisis es relativamente largo. Una vez completado el análisis,
+            haga clic en Guardar para generar el personaje en la gestión de personajes.
+        </li>
+        <li>Expresión regular de nombre de carácter: se utiliza para filtrar nuevas palabras
+            analizadas en el análisis de caracteres de texto para filtrar nombres.
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Otros</h4>
+    <ul>
+        <li>Si la aplicación se cierra en segundo plano, configure permisos como optimización de la
+            batería, ejecución en segundo plano, inicio asociado y evite la suspensión (según el
+            teléfono).
+        </li>
+        <li>Si el mensaje de error contiene la palabra clave zip al importar un paquete comprimido,
+            es posible que haya ocurrido un error al descargar el paquete comprimido.
+        </li>
+        <li>Cuando el software falla, el registro se copiará al portapapeles. Adjunte el registro
+            completo cuando informe el problema.
+        </li>
+        <li>Versión actual: v__VERSION_NAME__</li>
+        <li>Android ID: __ANDROID_ID__</li>
+    </ul>
+</div>
+
+</body>
+</html>

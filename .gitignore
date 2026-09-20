@@ -1,0 +1,8 @@
+base/*.apk
+out/*.apk
+out/*.idsig
+MultiTTS-Project/.gradle/
+MultiTTS-Project/build/
+MultiTTS-Project/app/build/
+MultiTTS-Project/local.properties
+*.log

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Nápověda</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: _FONT_COLOR_;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Základní ovládání</h4>
+    <ul>
+        <li>Klepnutím vyberete/zrušíte hlavní syntetizační engine</li>
+        <li>Dlouhým stiskem vyberete/zrušíte engine dialogu</li>
+        <li>Dlouhým stiskem na avataru upravíte mluvčího</li>
+        <li>Dlouhým stiskem ikony online/offline smažete mluvčího</li>
+        <li>Podržte jméno mluvčího a tažením nahoru/dolů měňte pořadí</li>
+        <li>Podržte jméno mluvčího a tažením doleva/doprava smažete</li>
+        <li>U ostatních seznamů: tažením doleva/doprava smažete, tažením nahoru/dolů měníte pořadí</li>
+        <li>V hlavním rozhraní: tažením dolů shora seznamu zobrazíte hromadné řízení</li>
+    </ul>
+</div>
+<div>
+    <h4>Popis funkcí</h4>
+    <ul>
+        <li>Import dat: vyberte komprimovaný balíček se souborem config.yaml.</li>
+        <li>Náhrada: oprava výslovnosti slov v tomto rozhraní. Podporuje běžnou i regulární náhradu.</li>
+        <li>Hudba na pozadí: přehrávání hudby při syntéze řeči.</li>
+        <li>Správa rolí: přidání pravidel pro rozpoznání rolí v textu a přiřazení konkrétních hlasů.</li>
+        <li>Pul hlasů: pro každou postavu odpovídající abstraktní roli je vybrán hlas z poolu.</li>
+        <li>Správa enginů: úprava, přidávání, mazání, řazení a export dat enginů.</li>
+        <li>Znovunačtení dat: znovu načte konfigurační soubor. Výchozí je databáze.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Správa rolí</h4>
+    <ul>
+        <li>Název role: jméno role, která se má shodovat.</li>
+        <li>Regulární výraz role: výraz odpovídající názvu role. Pokud není vyplněno, použije se název role.</li>
+        <li>Abstraktní role: pokud je vypnuto, všechny postavy používají stejný hlas. Pokud je zapnuto, každá postava dostane jiný hlas z poolu.</li>
+        <li>Dopředná shoda: pravidlo se aplikuje na text před dialogem.</li>
+        <li>Zpětná shoda: pravidlo se aplikuje na text po dialogu.</li>
+        <li>Režim shody:
+            <ul>
+                <li>Text: odpovídá všemu textu vyhovujícímu výrazu.</li>
+                <li>Jazyk: odpovídá textu v určeném jazyce.</li>
+                <li>Role: odpovídá mluvčímu dialogu.</li>
+            </ul>
+        </li>
+        <li>Software nejprve provede všechny dopředné shody, a pouze pokud nejsou výsledky, provede zpětné shody.</li>
+        <li>Ve správě rolí: dlouhým stiskem tlačítka Přidat přidáte kandidáty mluvčích jazyků.</li>
+    </ul>
+</div>
+<div>
+    <h4>Správa enginů</h4>
+    <ul>
+        <li>Typ: typ enginu. Momentálně lze přidat pouze HTTP engine.</li>
+        <li>Kód: interní označení enginu. Používejte jen alfanumerické znaky a podtržítka.</li>
+        <li>Záhlaví požadavku: hlavička použita při HTTP požadavku.</li>
+        <li>URL: HTTP odkaz. Výrazy JavaScriptu dejte do {{}}.</li>
+        <li>Podporované hodnoty v URL:
+            <ul>
+                <li>voiceCode: kód hlasu</li>
+                <li>speakText: text k syntéze</li>
+                <li>speakSpeed: rychlost, 0–100</li>
+                <li>speakVolume: hlasitost, 0–100</li>
+                <li>params: pole parametrů odpovídající parametrům mluvčího</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Pul hlasů</h4>
+    <ul>
+        <li>Abstraktní role: definována ve správě rolí.</li>
+        <li>Hlas postavy: každá postava odpovídající abstraktní roli dostane hlas ze stejné skupiny.</li>
+    </ul>
+</div>
+<div>
+    <h4>Nastavení</h4>
+    <ul>
+        <li>Pravidla shody rolí: používají se k filtrování kontextů. _ROLE_ znamená roli, _OTHER_ ostatní role.</li>
+        <li>Analýza gramatické struktury (pouze čínština).</li>
+        <li>Automatické přiřazení hlasů: po rozpoznání postavy se automaticky vybere hlas z poolu. Přiřazení je ukládáno do mezipaměti.</li>
+        <li>Analýza textu (pouze čínština): analýza nových slov. Klikněte na Uložit pro vytvoření nové postavy.</li>
+        <li>Regulární výraz pro jména: filtruje jména při analýze textu.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Přeposílání</h4>
+    <ul>
+        <li>Rozhraní TTS ( http://localhost:8774/forward ), parametry GET:
+            <ul>
+                <li>text: text k syntéze</li>
+                <li>speed: rychlost, 0–100</li>
+                <li>volume: hlasitost, 0–100</li>
+                <li>pitch: výška, 0–100</li>
+                <li>voice: ID hlasu, použijte /voices pro seznam hlasů</li>
+            </ul>
+        </li>
+        <li>Rozhraní seznamu hlasů ( http://localhost:8774/voices ), bez parametrů.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Vlastní tagy</h4>
+    <ul>
+        <li><strong>[[Custom Tag]]</strong> Obsah v tomto formátu je považován za tag a není syntetizován.</li>
+        <li><strong>[[PAUSE:1000]]</strong> Pauza 1000 ms.</li>
+        <li><strong>[[SPEED:1.2]]</strong> Nastaví rychlost na 1,2 násobek.</li>
+        <li><strong>[[PITCH:1.2]]</strong> Nastaví výšku na 1,2 násobek.</li>
+        <li><strong>[[VOLUME:1.2]]</strong> Nastaví hlasitost na 1,2 násobek.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Ostatní</h4>
+    <ul>
+        <li>Chcete-li ručně určit mluvčího v textu, vložte jméno do &lt;&lt;&gt;&gt;. Příklad: "&lt;&lt;Jan&gt;&gt;Tuto větu říkám já."</li>
+        <li>Pokud je aplikace ukončena na pozadí, povolte oprávnění jako optimalizace baterie, spuštění na pozadí, automatické spuštění a zabránění uspání (dle zařízení).</li>
+        <li>Pokud se při importu objeví chyba obsahující „zip“, mohl být soubor poškozen při stahování.</li>
+        <li>Při pádu aplikace se log zkopíruje do schránky. Přiložte jej při hlášení problému.</li>
+        <li>Aktuální verze: v_VERSION_NAME_</li>
+        <li>Android ID: _ANDROID_ID_</li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:paddingTop="12.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="20.0dp" android:paddingEnd="20.0dp">
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/replace_name" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/replace_edit_name" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/replace_source" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/replace_edit_source" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/replace_target" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/replace_edit_target" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/replace_group" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/replace_edit_group" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/test_content" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/replace_edit_test" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/test_output" app:endIconMode="none" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/replace_edit_output" android:focusable="false" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50.0dp" android:baselineAligned="false">
+            <com.google.android.material.textview.MaterialTextView android:gravity="center" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/replace_regex" android:layout_weight="1.5" />
+            <androidx.appcompat.widget.AppCompatCheckBox android:id="@id/replace_regex" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" />
+            <com.google.android.material.textview.MaterialTextView android:gravity="center" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/replace_activate" android:layout_weight="1.5" />
+            <androidx.appcompat.widget.AppCompatCheckBox android:id="@id/replace_activate" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

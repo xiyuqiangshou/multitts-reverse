@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_search" android:id="@id/action_search" android:orderInCategory="0" android:title="@string/search_hint" app:actionViewClass="androidx.appcompat.widget.SearchView" app:showAsAction="ifRoom|collapseActionView" />
+    <item android:icon="@drawable/ic_setting_a" android:id="@id/action_systts" android:orderInCategory="10" android:title="@string/action_systts" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_setting" android:id="@id/action_setting" android:orderInCategory="20" android:title="@string/action_setting" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_import" android:id="@id/action_import" android:orderInCategory="50" android:title="@string/action_import" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_replace" android:id="@id/action_replace" android:orderInCategory="80" android:title="@string/action_replace" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_bgm" android:id="@id/action_music" android:orderInCategory="90" android:title="@string/action_music" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_role" android:id="@id/action_role" android:orderInCategory="100" android:title="@string/action_role" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_resource_pool" android:id="@id/action_voice_pool" android:orderInCategory="110" android:title="@string/action_voice_pool" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_engine" android:id="@id/action_engine" android:orderInCategory="120" android:title="@string/action_engine" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_reload" android:id="@id/action_reload" android:orderInCategory="130" android:title="@string/action_reload" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_help" android:id="@id/action_tips" android:orderInCategory="140" android:title="@string/action_tips" app:showAsAction="never" />
+    <item android:icon="@drawable/ic_log_1" android:id="@id/action_view_log" android:orderInCategory="150" android:title="@string/action_view_log" app:showAsAction="never" />
+</menu>

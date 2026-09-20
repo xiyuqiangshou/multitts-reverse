@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="20.0dp" android:paddingEnd="20.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/voice_item_person" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.google.android.material.textfield.TextInputEditText android:id="@id/voice_item_person" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/voice_item_group" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/voice_item_role" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/voice_engine_group" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/voice_engine_group" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/role_speaker_name" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/voice_item_voice" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

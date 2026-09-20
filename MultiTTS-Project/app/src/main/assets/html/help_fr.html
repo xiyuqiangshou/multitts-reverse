@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Aide</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: _FONT_COLOR_;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Opérations de base</h4>
+    <ul>
+        <li>Appuyer pour sélectionner/désélectionner le moteur principal de synthèse</li>
+        <li>Appui long pour sélectionner/désélectionner le moteur de synthèse de dialogue</li>
+        <li>Appui long sur l’avatar pour modifier le locuteur</li>
+        <li>Appui long sur l’icône hors ligne/en ligne pour supprimer le locuteur</li>
+        <li>Maintenir le nom du locuteur et le faire glisser vers le haut ou vers le bas pour trier</li>
+        <li>Maintenir le nom du locuteur et le faire glisser vers la gauche ou la droite pour supprimer</li>
+        <li>Pour les autres listes, glisser à gauche ou à droite pour supprimer, glisser vers le haut ou le bas pour trier</li>
+        <li>Tirer vers le bas en haut de la liste de l’interface principale pour afficher l’interface de gestion par lots</li>
+    </ul>
+</div>
+<div>
+    <h4>Description des fonctions</h4>
+    <ul>
+        <li>Importer des données : sélectionner un fichier compressé contenant des données de moteur prises en charge. Le premier niveau du fichier zip doit contenir un fichier config.yaml valide.</li>
+        <li>Remplacement : corriger la prononciation des mots dans cette interface, prend en charge le remplacement normal et régulier.</li>
+        <li>Musique de fond : jouer de la musique de fond pendant la synthèse vocale.</li>
+        <li>Gestion des rôles : ajouter des règles pour identifier les rôles dans le texte à lire et utiliser des locuteurs spécifiques.</li>
+        <li>Pool de voix : pour chaque personnage correspondant à un rôle abstrait, une voix est choisie dans le pool et attribuée.</li>
+        <li>Gestion des moteurs : modifier, ajouter, supprimer, trier et exporter des données de moteurs.</li>
+        <li>Recharger les données : relire le fichier de configuration et charger les données. Par défaut, chargées depuis la base de données.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Gestion des rôles</h4>
+    <ul>
+        <li>Nom du rôle : le nom du rôle à faire correspondre.</li>
+        <li>Expression régulière du rôle : expression régulière correspondant au nom du rôle. Si non rempli, le nom du rôle est utilisé.</li>
+        <li>Rôle abstrait : si désactivé, tous les personnages correspondants utilisent la même voix ; si activé, chaque personnage spécifique reçoit une voix différente du pool.</li>
+        <li>Correspondance anticipée : la règle correspond au texte avant la conversation.</li>
+        <li>Correspondance arrière : la règle correspond au texte après la conversation.</li>
+        <li>Mode de correspondance :
+            <ul>
+                <li>Texte : correspond à tout contenu textuel conforme à l’expression régulière.</li>
+                <li>Langue : correspond au texte correspondant à la langue sélectionnée.</li>
+                <li>Rôle : correspond au locuteur du dialogue.</li>
+            </ul>
+        </li>
+        <li>Le logiciel effectue d’abord toutes les correspondances anticipées. Les correspondances arrière ne sont effectuées que s’il n’y a pas de résultats.</li>
+        <li>Dans l’interface de gestion des rôles, appui long sur le bouton Ajouter pour ajouter des locuteurs candidats pour les langues.</li>
+    </ul>
+</div>
+<div>
+    <h4>Gestion des moteurs</h4>
+    <ul>
+        <li>Type : type de moteur. Actuellement, seul le moteur HTTP peut être ajouté.</li>
+        <li>Code : représentation interne du moteur. Utilisez uniquement des caractères alphanumériques et des traits de soulignement.</li>
+        <li>En-tête de requête : en-tête utilisé lors de l’envoi d’une requête HTTP.</li>
+        <li>URL : lien HTTP. Encadrez les expressions JavaScript dans {{}}.</li>
+        <li>Valeurs prises en charge dans les URL :
+            <ul>
+                <li>voiceCode : code du locuteur</li>
+                <li>speakText : texte à synthétiser</li>
+                <li>speakSpeed : vitesse, plage de 0 à 100</li>
+                <li>speakVolume : volume, plage de 0 à 100</li>
+                <li>params : tableau de paramètres correspondant aux paramètres du locuteur</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Pool de voix</h4>
+    <ul>
+        <li>Rôle abstrait : rôle abstrait défini dans la gestion des rôles.</li>
+        <li>Voix du personnage : chaque personnage spécifique correspondant au rôle abstrait reçoit une voix du même groupe.</li>
+    </ul>
+</div>
+<div>
+    <h4>Paramètres</h4>
+    <ul>
+        <li>Règles de correspondance des rôles : utilisées pour filtrer les contextes légaux lors de la correspondance. Utilisez _ROLE_ pour désigner le rôle et _OTHER_ pour les autres rôles.</li>
+        <li>Analyse de la structure grammaticale (supporte uniquement le chinois).</li>
+        <li>Attribution automatique des voix : après reconnaissance, attribue automatiquement une voix du pool (rôles abstraits requis). L’attribution est mise en cache jusqu’à écrasement.</li>
+        <li>Analyse des caractères du texte (uniquement chinois) : détecter de nouveaux mots. Cliquer sur Enregistrer pour générer un nouveau personnage.</li>
+        <li>Expression régulière des noms : filtrer les nouveaux mots analysés pour garder uniquement les noms.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Transfert</h4>
+    <ul>
+        <li>Interface TTS ( http://localhost:8774/forward ), paramètres GET :
+            <ul>
+                <li>text : texte à synthétiser</li>
+                <li>speed : vitesse, 0~100</li>
+                <li>volume : volume, 0~100</li>
+                <li>pitch : hauteur, 0~100</li>
+                <li>voice : ID de la voix, utiliser /voices pour obtenir toutes les voix disponibles</li>
+            </ul>
+        </li>
+        <li>Interface liste des voix ( http://localhost:8774/voices ), aucun paramètre.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Balises personnalisées</h4>
+    <ul>
+        <li><strong>[[Custom Tag]]</strong> Le contenu entre ce format est traité comme balise et non synthétisé.</li>
+        <li><strong>[[PAUSE:1000]]</strong> Pause de 1000 ms.</li>
+        <li><strong>[[SPEED:1.2]]</strong> Définit la vitesse à 1,2.</li>
+        <li><strong>[[PITCH:1.2]]</strong> Définit la hauteur à 1,2.</li>
+        <li><strong>[[VOLUME:1.2]]</strong> Définit le volume à 1,2.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Autres</h4>
+    <ul>
+        <li>Pour indiquer manuellement le locuteur dans le texte, insérer le nom entre &lt;&lt;&gt;&gt;. Exemple : "&lt;&lt;Jean&gt;&gt;Cette phrase est dite par moi."</li>
+        <li>Si l’application est arrêtée en arrière-plan, ajuster les paramètres d’optimisation batterie, exécution arrière-plan, démarrage automatique et veille (selon l’appareil).</li>
+        <li>Si un message d’erreur contient « zip » lors de l’importation, une erreur est survenue lors du téléchargement.</li>
+        <li>En cas de crash, le journal est copié dans le presse-papiers. Veuillez l’envoyer avec le rapport.</li>
+        <li>Version actuelle : v_VERSION_NAME_</li>
+        <li>ID Android : _ANDROID_ID_</li>
+    </ul>
+</div>
+
+</body>
+</html>

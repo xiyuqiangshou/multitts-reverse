@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Impostazioni</item>
+        <item>Cambia voce</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Inglese</item>
+        <item>Cinese (semplificato)</item>
+        <item>Spagnolo (Spagna)</item>
+        <item>Spagnolo (Unione Europea)</item>
+        <item>Spagnolo (Colombia)</item>
+        <item>Spagnolo (USA)</item>
+        <item>Arabo</item>
+        <item>Vietnamita (Vietnam)</item>
+        <item>Bengalese (India)</item>
+        <item>Gujarati (India)</item>
+        <item>Hindi (India)</item>
+        <item>Kannada (India)</item>
+        <item>Malayalam (India)</item>
+        <item>Marathi (India)</item>
+        <item>Nepalese (Nepal)</item>
+        <item>Oriya (India)</item>
+        <item>Punjabi (India)</item>
+        <item>Tamil (India)</item>
+        <item>Telugu (India)</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Khmer (Cambogia)</item>
+        <item>Ucraino (Ucraina)</item>
+        <item>Turco (Turchia)</item>
+        <item>Thailandese (Thailandia)</item>
+        <item>Portoghese (Brasile)</item>
+        <item>Russo (Russia)</item>
+        <item>Filippino (Filippine)</item>
+        <item>Tedesco (Germania)</item>
+        <item>Ceco (Cechia)</item>
+        <item>Olandese (Paesi Bassi)</item>
+        <item>Francese (Francia)</item>
+        <item>Italiano (Italia)</item>
+        <item>Polacco (Polonia)</item>
+        <item>Indonesiano (Indonesia)</item>
+        <item>Curdo Centrale (کوردیی ناوەندی)</item>
+        <item>Svedese (Svezia)</item>
+        <item>Curdo Kurmanji (Kurdî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Imparare nuove parole</item>
+        <item>Modello di riconoscimento degli oggetti</item>
+    </string-array>
+</resources>

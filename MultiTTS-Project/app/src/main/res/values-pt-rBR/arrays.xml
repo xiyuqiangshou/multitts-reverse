@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Forte</item>
+        <item>Voz tátil</item>
+    </string-array>
+    <string-array name="language_detector_entries">
+        <item>Otimizar</item>
+        <item>por multimídia</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Inglês</item>
+        <item>Chinês simplificado</item>
+        <item>espanhol (Espanha)</item>
+        <item>espanhol (União Europeia)</item>
+        <item>espanhol (Colômbia)</item>
+        <item>espanhol (Estados Unidos)</item>
+        <item>árabe</item>
+        <item>Vietnamita</item>
+        <item>bengali (Índia)</item>
+        <item>gujarati (Índia)</item>
+        <item>hindi (Índia)</item>
+        <item>kannada (Índia)</item>
+        <item>malayalam (Índia)</item>
+        <item>marathi (Índia)</item>
+        <item>nepalês (Nepal)</item>
+        <item>odia (Índia)</item>
+        <item>punjabi (Índia)</item>
+        <item>tâmil (Índia)</item>
+        <item>telugu (Índia)</item>
+        <item>urdu (Paquistão)</item>
+        <item>khmer (Camboja)</item>
+        <item>ucraniano (Ucrânia)</item>
+        <item>turco (Türkiya)</item>
+        <item>tailandês (Tailândia)</item>
+        <item>português (Brasil)</item>
+        <item>russo (Rússia)</item>
+        <item>filipino (Filipinas)</item>
+        <item>alemão (Alemanha)</item>
+        <item>tcheco (República Tcheca)</item>
+        <item>holandês (Holanda)</item>
+        <item>francês (França)</item>
+        <item>italiano (Itália)</item>
+        <item>polonês (Polônia)</item>
+        <item>indonésio (Indonésia)</item>
+        <item>Curdo</item>
+        <item>Svenska (Sverige)</item>
+        <item>Kurdî (Kurmancî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Descobrir novas palavras</item>
+        <item>Modelo baixo</item>
+    </string-array>
+</resources>

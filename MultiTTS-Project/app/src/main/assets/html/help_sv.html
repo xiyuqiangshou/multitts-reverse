@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="sv">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Hjälp</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: _FONT_COLOR_;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Grundläggande användning</h4>
+    <ul>
+        <li>Tryck för att välja/avmarkera huvudmotorn för syntes</li>
+        <li>Långtryck för att välja/avmarkera dialogmotorn</li>
+        <li>Långtryck på avataren för att redigera talaren</li>
+        <li>Långtryck på online/offline-ikonen för att ta bort talaren</li>
+        <li>Håll nere talarens namn och dra upp eller ner för att sortera</li>
+        <li>Håll nere talarens namn och svep vänster eller höger för att ta bort</li>
+        <li>För andra listor: svep vänster/höger för att ta bort, dra upp/ner för att sortera</li>
+        <li>I huvudgränssnittet: dra ner från toppen av listan för att visa batchhantering</li>
+    </ul>
+</div>
+<div>
+    <h4>Funktionsbeskrivning</h4>
+    <ul>
+        <li>Importera data: välj en zip-fil med stödda motordata. Den måste innehålla en giltig config.yaml i roten.</li>
+        <li>Ersättning: korrigera uttalet av ord i detta gränssnitt. Stöd för både normal och reguljär ersättning.</li>
+        <li>Bakgrundsmusik: spela musik under talsyntesen.</li>
+        <li>Rollhantering: lägg till regler för att identifiera roller i texten och tilldela talare.</li>
+        <li>Röstpool: för varje karaktär som matchar en abstrakt roll väljs en röst från poolen.</li>
+        <li>Motorhantering: redigera, lägg till, ta bort, sortera och exportera motorer.</li>
+        <li>Ladda om data: läs om konfigurationsfilen och ladda data. Standard från databasen.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Rollhantering</h4>
+    <ul>
+        <li>Rollnamn: namnet på rollen att matcha.</li>
+        <li>Reguljärt uttryck: matchar rollnamnet. Om tomt används rollnamnet.</li>
+        <li>Abstrakt roll: om avaktiverad använder alla karaktärer samma röst. Om aktiverad får varje karaktär en röst från poolen.</li>
+        <li>Framåtsmatch: regeln matchar text före dialogen.</li>
+        <li>Bakåtsmatch: regeln matchar text efter dialogen.</li>
+        <li>Matchläge:
+            <ul>
+                <li>Text: matchar allt innehåll som överensstämmer med uttrycket.</li>
+                <li>Språk: matchar text som motsvarar valt språk.</li>
+                <li>Roll: matchar dialogens talare.</li>
+            </ul>
+        </li>
+        <li>Programmet utför först alla framåtmatchningar, och endast om inga resultat hittas utförs bakåtmatchningar.</li>
+        <li>I rollhanteringen: långtryck på Lägg till-knappen för att lägga till språk-talare.</li>
+    </ul>
+</div>
+<div>
+    <h4>Motorhantering</h4>
+    <ul>
+        <li>Typ: motortyp. För närvarande stöds endast HTTP-motorer.</li>
+        <li>Kod: intern representation. Använd endast bokstäver, siffror och understreck.</li>
+        <li>Begärandehuvud: header som används vid HTTP-begäran.</li>
+        <li>URL: HTTP-länk. Lägg JavaScript-uttryck inom {{}}.</li>
+        <li>Stödda värden i URL:
+            <ul>
+                <li>voiceCode: röstkod</li>
+                <li>speakText: text att syntetisera</li>
+                <li>speakSpeed: hastighet, 0–100</li>
+                <li>speakVolume: volym, 0–100</li>
+                <li>params: parameterlista motsvarande talarens parametrar</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Röstpool</h4>
+    <ul>
+        <li>Abstrakt roll: definierad i rollhanteringen.</li>
+        <li>Karaktärsröst: varje karaktär som matchar rollen får en röst från samma grupp.</li>
+    </ul>
+</div>
+<div>
+    <h4>Inställningar</h4>
+    <ul>
+        <li>Rollmatchningsregler: används för att filtrera giltiga kontexter. _ROLE_ avser rollen och _OTHER_ andra roller.</li>
+        <li>Grammatisk analys (endast kinesiska): analyserar en text och dess struktur.</li>
+        <li>Automatisk tilldelning av röster: efter identifiering tilldelas automatiskt röster från poolen. Lagrade i cache.</li>
+        <li>Textanalys (endast kinesiska): analysera nya ord. Klicka på Spara för att generera karaktärer.</li>
+        <li>Reguljärt uttryck för namn: filtrerar bort namn från analysen.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Vidarebefordran</h4>
+    <ul>
+        <li>TTS-gränssnitt ( http://localhost:8774/forward ), GET-parametrar:
+            <ul>
+                <li>text: text att syntetisera</li>
+                <li>speed: hastighet, 0–100</li>
+                <li>volume: volym, 0–100</li>
+                <li>pitch: tonhöjd, 0–100</li>
+                <li>voice: röst-ID, använd /voices för att få alla tillgängliga röster</li>
+            </ul>
+        </li>
+        <li>Röstlista ( http://localhost:8774/voices ), inga parametrar.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Anpassade taggar</h4>
+    <ul>
+        <li><strong>[[Custom Tag]]</strong> Innehåll i detta format behandlas som tagg och syntetiseras inte.</li>
+        <li><strong>[[PAUSE:1000]]</strong> Paus i 1000 ms.</li>
+        <li><strong>[[SPEED:1.2]]</strong> Ställer in hastigheten till 1,2.</li>
+        <li><strong>[[PITCH:1.2]]</strong> Ställer in tonhöjden till 1,2.</li>
+        <li><strong>[[VOLUME:1.2]]</strong> Ställer in volymen till 1,2.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Övrigt</h4>
+    <ul>
+        <li>För att manuellt ange talare i texten, sätt namnet inom &lt;&lt;&gt;&gt;. Exempel: "&lt;&lt;Johan&gt;&gt;Denna mening sägs av mig."</li>
+        <li>Om appen stängs i bakgrunden, aktivera tillstånd som batterioptimering, bakgrundskörning, autostart och förhindra viloläge (beroende på enhet).</li>
+        <li>Om felmeddelandet innehåller “zip” vid import kan nedladdningen ha misslyckats.</li>
+        <li>Vid krascher kopieras loggen till urklipp. Inkludera den vid felrapportering.</li>
+        <li>Nuvarande version: v_VERSION_NAME_</li>
+        <li>Android-ID: _ANDROID_ID_</li>
+    </ul>
+</div>
+
+</body>
+</html>

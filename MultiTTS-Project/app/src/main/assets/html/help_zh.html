@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>使用帮助</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: __FONT_COLOR__;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>基本操作</h4>
+    <ul>
+        <li>单击选择/取消选择主合成引擎</li>
+        <li>长按选择/取消选择对话合成引擎</li>
+        <li>长按头像编辑发音人</li>
+        <li>长按已下载图标删除发音人</li>
+        <li>按住发音人名称上下拖动排序</li>
+        <li>按住发音人名称左右滑动删除</li>
+        <li>其他列表，左右滑动删除，上下拖动排序</li>
+        <li>主界面在列表顶部下拉，显示批量管理界面</li>
+    </ul>
+</div>
+<div>
+    <h4>功能说明</h4>
+    <ul>
+        <li>导入数据：选择包含受支持引擎数据的压缩包导入，要求压缩包第一层必须包含合法的config.yaml。
+        </li>
+        <li>编辑替换：可在此界面中纠正单词读音，支持普通替换和正则替换。</li>
+        <li>背景音乐：在合成语音的同时，播放背景音。</li>
+        <li>角色管理：添加规则，识别朗读文本中的角色，并用指定的发音人进行朗读。</li>
+        <li>声音の池：对于每个匹配抽象角色的具体人物，会从声音池中选出一个声音分配给该人物。</li>
+        <li>引擎管理：对引擎进行编辑、添加、删除、排序和导出数据。</li>
+        <li>重载数据：重新读取配置文件并加载数据，默认从数据库中加载。</li>
+    </ul>
+</div>
+
+<div>
+    <h4>角色管理</h4>
+    <ul>
+        <li>角色名称：要匹配角色的名称。</li>
+        <li>角色正则：匹配角色名的正则表达式，不填写时使用角色名称的值。</li>
+        <li>
+            抽象角色：不启用时，所有匹配的人物都将使用同一个声音；启用时，表示这是一个抽象角色（对应多个具体人物），每个具体人物将从声音池中抽取一个声音分配。
+        </li>
+        <li>前向匹配：规则将匹配对话前的文本。</li>
+        <li>后向匹配：规则将匹配对话后的文本。</li>
+        <li>匹配模式：
+            <ul>
+                <li>文本：匹配符合正则表达式的全部文本内容</li>
+                <li>语言：匹配符合选中语言的文本</li>
+                <li>角色：匹配对话内容的说话者</li>
+            </ul>
+        </li>
+        <li>角色管理界面，长按添加按钮以添加候选语种发音人。</li>
+        <li>软件会先进行所有前向匹配，在前向匹配没有结果时，才会进行后向匹配。</li>
+    </ul>
+</div>
+<div>
+    <h4>引擎管理</h4>
+    <ul>
+        <li>类型：引擎类型，目前仅支持添加http引擎。</li>
+        <li>代号：引擎的内部表示，请使用字母数字和下划线。</li>
+        <li>请求头：发送http请求时使用的请求头。</li>
+        <li>URL：http链接，java script表达式请用{{}}包裹。</li>
+        <li>URL中支持引用的值：
+            <ul>
+                <li>voiceCode：发音人代号</li>
+                <li>speakText：要合成的文本</li>
+                <li>speakSpeed：语速，取值0~100</li>
+                <li>speakVolume：音量，取值0~100</li>
+                <li>params：参数数组，对应发音人的参数，已进行分割</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>声音の池</h4>
+    <ul>
+        <li>抽象角色：角色管理中定义的抽象角色。</li>
+        <li>角色声音：抽象角色对应的每个具体人物，将从同一分组下的声音中选出一个分配给它。</li>
+    </ul>
+</div>
+<div>
+    <h4>软件设置</h4>
+    <ul>
+        <li>
+            角色匹配规则：用于匹配对话角色时，过滤出合法的上下文。用__ROLE__指代要匹配的角色，__OTHER__指代其他角色。
+        </li>
+        <li>语法结构分析：输入一段文本，对文本进行词性标注，获取句子语法结构。词性表请参见帮助末尾。</li>
+        <li>
+            自动分配声音：识别到人物后，自动从角色池选择声音分配（需要先定义抽象角色和设置好角色池）。分配关系将被缓存，直至被新记录覆盖。
+        </li>
+        <li>
+            文本人物分析：分析文本中出现的新词，分析过程较长。分析完成后，点击保存，将在角色管理中生成角色。
+        </li>
+        <li>人物名称正则：用于在文本人物分析中，对分析出的新词进行筛选，以过滤出人名。</li>
+    </ul>
+</div>
+
+<div>
+    <h4>转发器</h4>
+    <ul>
+        <li>语音合成接口( http://localhost:8774/forward )，GET参数：
+            <ul>
+                <li>text：要合成的文本</li>
+                <li>speed：语速，取值0~100</li>
+                <li>volume：音量，取值0~100</li>
+                <li>pitch：音高，取值0~100</li>
+                <li>voice：声音id，请求/voices接口获取所有发音人</li>
+            </ul>
+        </li>
+        <li>语音列表接口( http://localhost:8774/voices )，无参数。</li>
+    </ul>
+</div>
+<div>
+    <h4>自定义标记</h4>
+    <ul>
+        <li><strong>[[自定义标记]]</strong> 这种被包裹的内容会被视为标记，不会进行合成。</li>
+        <li><strong>[[PAUSE:1000]]</strong> 表示添加1000ms的静音。</li>
+        <li><strong>[[SPEED:1.2]]</strong> 表示语速乘以1.2倍。</li>
+        <li><strong>[[PITCH:1.2]]</strong> 表示音调乘以1.2倍。</li>
+        <li><strong>[[VOLUME:1.2]]</strong> 表示音量乘以1.2倍。</li>
+    </ul>
+</div>
+
+<div>
+    <h4>其他</h4>
+    <ul>
+        <li>如需在文本中手动指定说话人，可在对话内容引号内部用&lt;&lt;&gt;&gt;包裹人名。示例：“&lt;&lt;张三&gt;&gt;这句话是我说的。”</li>
+        <li>如果应用被杀后台，请设置电池优化、后台运行、关联启动、阻止休眠(视手机而定)等权限。</li>
+        <li>导入压缩包时如果错误信息包含zip关键字，可能是下载压缩包时出错。</li>
+        <li>软件崩溃时，会将日志复制到剪贴板，反馈问题时请附上完整日志。</li>
+        <li>当前版本：v__VERSION_NAME__</li>
+        <li>Android ID: __ANDROID_ID__</li>
+    </ul>
+</div>
+
+</body>
+</html>

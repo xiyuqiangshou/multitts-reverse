@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Help</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: __FONT_COLOR__;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Temel İşlemler</h4>
+    <ul>
+        <li>Ana sentez motorunu seçmek / seçimini kaldırmak için tıklayın</li>
+        <li>Diyalog sentez motorunu seçmek/seçimini kaldırmak için uzun basın</li>
+        <li>Konuşmacıyı düzenlemek için avatarı uzun süre basılı tutun</li>
+        <li>Konuşmacıyı silmek için çevrimdışı/çevrimiçi simgesine uzun basın</li>
+        <li>Konuşmacının adını basılı tutun ve sıralamak için yukarı veya aşağı sürükleyin</li>
+        <li>Konuşmacının adını basılı tutun ve silmek için sola ve sağa kaydırın</li>
+        <li>Diğer listelerde silme işlemi yapmak için sola veya sağa kaydırın, sıralamak için yukarı veya aşağı
+            sürükleyin
+        </li>
+        <li>Ana arayüz, toplu iş yönetimini görüntülemek için listenin en üstünde aşağı çekilir
+            arayüz
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Fonksiyon Açıklaması</h4>
+    <ul>
+        <li>Verileri içe aktar: İçe aktarmak için desteklenen motor verilerini içeren sıkıştırılmış
+            bir paket seçin.
+            Zip dosyasının ilk katmanı geçerli bir config.yaml dosyası içermelidir.
+        </li>
+        <li>Kullanıcı sözlüğü: Kelimelerin telaffuzu bu arayüzde düzeltilebilir;
+            hem normal değiştirmeyi hem de düzenli değiştirmeyi destekler.
+        </li>
+        <li>Arka plan müziği: Konuşmayı sentezlerken arka plan müziği çalın.</li>
+        <li>Rol yönetimi: Metinde yüksek sesle okunacak ve kullanılacak rolleri tanımlamak için
+            kurallar ekleyin
+            yüksek sesle okumak için belirtilen konuşmacılar okur.
+        </li>
+        <li>Ses Havuzu: Soyut bir rolle eşleşen her belirli karakter için bir ses
+            ses havuzundan seçilir ve o karaktere atanır.
+        </li>
+        <li>Motor yönetimi: Motorlara ait verileri düzenleme, ekleme, silme, sıralama ve dışa
+            aktarma.
+        </li>
+        <li>Ses verilerini yenile: Yapılandırma dosyasını yeniler ve yeniden yükler okur.
+            Varsayılan olarak yüklenir veritabanından.
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Rol Yönetimi</h4>
+    <ul>
+        <li>Rol Adı: Eşleşecek rolün adı.</li>
+        <li>Rol düzenli ifadesi: Rol adıyla eşleşen normal ifade. Doldurulmazsa
+            içinde, rol adının değeri kullanılır.
+        </li>
+        <li>
+            Soyut rol: Etkinleştirilmediğinde, eşleşen tüm karakterler aynı sesi kullanır;
+            etkinleştirildiğinde,
+            bunun soyut bir rol olduğu (birden fazla belirli karaktere karşılık gelir)
+            ve her belirli karakterin ses havuzundan bir ses çekeceği anlamına gelir.
+        </li>
+        <li>İleriye dönük eşleşme: Kural, konuşmadan önceki metinle eşleşecektir.</li>
+        <li>Geriye dönük eşleşme: Kural, konuşmadan sonraki metinle eşleşecektir.</li>
+        <li>Eşleştirme Modu:
+            <ul>
+                <li>Metin: Normal ifadeye uyan tüm metin içeriğini eşleştir.</li>
+                <li>Dil: Seçilen dile karşılık gelen metni eşleştir.</li>
+                <li>Rol: Diyalog içeriğindeki konuşmacıyı eşleştir.</li>
+            </ul>
+        </li>
+        <li>Yazılım ilk önce tüm ileri eşleşmeleri gerçekleştirecek ve sadece ileri eşleşmelerden
+            sonuç alınamadığında geriye doğru eşleşmeleri gerçekleştirecektir.
+        </li>
+        <li>Rol yönetimi arayüzünde, aday dil konuşmacılarını eklemek için Ekle düğmesine uzun
+            basın.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Motor Yönetimi</h4>
+    <ul>
+        <li>Tür: Motor türü. Şu anda yalnızca http motoru eklenebilir.</li>
+        <li>Kod: Motorun dahili gösterimi. Lütfen alfanümerik karakterler ve alt çizgiler
+            kullanın.
+        </li>
+        <li>İstek başlığı: Bir http isteği gönderilirken kullanılan istek başlığı.</li>
+        <li>URL: http bağlantısı. Lütfen javascript ifadelerini ekleyin {{}}.</li>
+        <li>URL'lerde desteklenen tırnak işaretleri:
+            <ul>
+                <li>voiceCode: konuşmacı kodu</li>
+                <li>speakText: Sentezlenecek metin</li>
+                <li>speakSpeed: konuşma hızı, değer aralığı 0~100</li>
+                <li>speakVolume: ses seviyesi, değer aralığı 0~100</li>
+                <li>params: konuşmacının segmentlere ayrılmış parametrelerine karşılık gelen
+                    parametre dizisi
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Sesler Havuzu</h4>
+    <ul>
+        <li>Soyut rol: Rol yönetiminde tanımlanan soyut rol.</li>
+        <li>Karakter Sesi: Soyut karaktere karşılık gelen her belirli kişi, kendisine atanan aynı
+            gruptaki seslerden seçilen bir sese sahip olacaktır.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Ayarlar</h4>
+    <ul>
+        <li>Rol eşleştirme kuralları: diyalog rollerini eşleştirirken yasal bağlamları filtrelemek
+            için kullanılır. Eşleştirilecek role atıfta bulunmak için __ROLE__ ve diğer rollere
+            atıfta bulunmak için __OTHER__ kullanın.
+        </li>
+        <li>Dilbilgisi yapısı analizi (Yalnızca Çince'yi destekler): Bir metin parçası girin, metni
+            sözcük türleri ile etiketleyin ve cümlenin dilbilgisi yapısını elde edin. Sözcük türü
+            tablosu için lütfen yardımın sonuna bakın.
+        </li>
+        <li>
+            Sesleri otomatik olarak atayın: Bir kişiyi tanıdıktan sonra, rol havuzundan otomatik
+            olarak sesleri seçin (önce soyut rolleri tanımlamanız ve rol havuzunu ayarlamanız
+            gerekir).
+            Atama ilişkisi, yeni bir kayıt tarafından üzerine yazılana kadar önbelleğe alınacaktır.
+        </li>
+        <li>
+            Metin karakter analizi (Yalnızca Çince'yi destekler): Metindeki yeni kelimeleri
+            analiz edin. Analiz süreci nispeten uzundur. Analiz tamamlandıktan sonra,
+            karakter yönetiminde karakteri oluşturmak için Kaydet'e tıklayın.
+        </li>
+        <li>Karakter adı düzenli ifadesi: metinde analiz edilen yeni kelimeleri filtrelemek için
+            kullanılır
+            isimleri filtrelemek için karakter analizi.
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Diğerleri</h4>
+    <ul>
+        <li>Yönlendirici tarafından desteklenen parametreler:
+            <ul>
+                <li>text: sentezlenecek metin</li>
+                <li>speed: konuşma hızı, değer 0~100</li>
+                <li>Volume: ses seviyesi, değer 0~100</li>
+                <li>pitch: ses perdesi, değer 0~100</li>
+                <li>voice: ses kimliği, tüm konuşmacıları elde etmek için /voices arayüzünü
+                    isteyin
+                </li>
+            </ul>
+        </li>
+        <li>Uygulama arka planda kapatılırsa lütfen pil optimizasyonu, arka planda çalışma,
+            ilişkili başlatma ve uykuyu engelleme gibi izinleri ayarlayın.
+            (telefona bağlı olarak farklılık gösterebilir)
+        </li>
+        <li>Sıkıştırılmış bir paketi içe aktarırken hata mesajı zip anahtar sözcüğünü içeriyorsa,
+            sıkıştırılmış paketi indirirken bir hata oluşmuş olabilir.
+        </li>
+        <li>Yazılım çöktüğünde, günlük panoya kopyalanacaktır. Lütfen sorunu bildirirken
+            tam günlüğü ekleyin.
+        </li>
+        <li>Mevcut sürüm: v__VERSION_NAME__</li>
+        <li>Android Kimliği: __ANDROID_ID__</li>
+    </ul>
+</div>
+
+</body>
+</html>

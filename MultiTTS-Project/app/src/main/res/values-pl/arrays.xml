@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Ustawienia</item>
+        <item>Zmień głos</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Angielski</item>
+        <item>Chiński (uproszczony)</item>
+        <item>Hiszpański (Hiszpania)</item>
+        <item>Hiszpański (Unia Europejska)</item>
+        <item>Hiszpański (Kolumbia)</item>
+        <item>Hiszpański (USA)</item>
+        <item>Arabski</item>
+        <item>Wietnamski (Wietnam)</item>
+        <item>Bengalski (Indie)</item>
+        <item>Gudżarati (Indie)</item>
+        <item>Hindi (Indie)</item>
+        <item>Kannada (Indie)</item>
+        <item>Malajalam (Indie)</item>
+        <item>Marathi (Indie)</item>
+        <item>Nepalski (Nepal)</item>
+        <item>Orija (Indie)</item>
+        <item>Pendżabski (Indie)</item>
+        <item>Tamilski (Indie)</item>
+        <item>Telugu (Indie)</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Khmer (Kambodża)</item>
+        <item>Ukraiński (Ukraina)</item>
+        <item>Turecki (Turcja)</item>
+        <item>Tajski (Tajlandia)</item>
+        <item>Portugalski (Brazylia)</item>
+        <item>Rosyjski (Rosja)</item>
+        <item>Filipiński (Filipiny)</item>
+        <item>Niemiecki (Niemcy)</item>
+        <item>Czeski (Czechy)</item>
+        <item>Holenderski (Holandia)</item>
+        <item>Francuski (Francja)</item>
+        <item>Włoski (Włochy)</item>
+        <item>Polski (Polska)</item>
+        <item>Indonezyjski (Indonezja)</item>
+        <item>Kurdyjski (کوردیی ناوەندی)</item>
+        <item>Szwedzki (Szwecja)</item>
+        <item>Kurmanczi (Kurdî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Nauka nowych słów</item>
+        <item>Model rozpoznawania obiektów</item>
+    </string-array>
+</resources>

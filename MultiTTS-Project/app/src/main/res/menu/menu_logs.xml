@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_delete_b" android:id="@id/action_clear" android:title="@string/msg_clean" app:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_export_b" android:id="@id/action_export" android:title="@string/desc_export" app:showAsAction="always" />
+</menu>

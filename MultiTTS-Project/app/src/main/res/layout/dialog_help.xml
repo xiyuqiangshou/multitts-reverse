@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50.0dp">
+        <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="?cardTextColor" android:gravity="center" android:id="@id/help_title" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/title_help" android:paddingStart="18.0dp" app:layout_constraintEnd_toStartOf="@id/help_close" app:layout_constraintStart_toStartOf="parent" app:layout_constraintWidth_default="percent" app:layout_constraintWidth_percent="0.8" />
+        <TextView android:textColor="?cardTextColor" android:gravity="center" android:id="@id/help_close" android:background="?android:selectableItemBackground" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/title_close" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/help_title" app:layout_constraintWidth_percent="0.2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <WebView android:id="@id/webView" android:layout_width="match_parent" android:layout_height="490.0dp" android:layerType="software" />
+</LinearLayout>

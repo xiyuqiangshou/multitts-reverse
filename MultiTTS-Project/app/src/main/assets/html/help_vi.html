@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Giúp đỡ</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: __FONT_COLOR__;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h4>Hoạt động cơ bản</h4>
+    <ul>
+        <li>Bấm để chọn/bỏ chọn công cụ tổng hợp chính</li>
+        <li>Nhấn và giữ để chọn/bỏ chọn công cụ tổng hợp hội thoại</li>
+        <li>Nhấn và giữ hình đại diện để chỉnh sửa loa</li>
+        <li>Nhấn và giữ biểu tượng ngoại tuyến/trực tuyến để xóa loa</li>
+        <li>Nhấn và giữ tên người nói rồi kéo lên hoặc xuống để sắp xếp</li>
+        <li>Nhấn và giữ tên người nói và trượt sang trái và phải để xóa</li>
+        <li>Đối với các danh sách khác trượt sang trái và phải để xóa, kéo lên xuống để sắp xếp</li>
+        <li>Giao diện chính kéo xuống trên cùng danh sách hiển thị giao diện quản lý hàng loạt
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Mô tả chức năng</h4>
+    <ul>
+        <li>Nhập dữ liệu: Chọn gói nén chứa dữ liệu động cơ được hỗ trợ để nhập. Lớp đầu tiên của
+            tệp zip phải chứa tệp config.yaml hợp lệ.
+        </li>
+        <li>Thay thế: Việc phát âm các từ có thể được sửa trong giao diện này, hỗ trợ cả thay thế
+            thông thường và thay thế thông thường.
+        </li>
+        <li>Nhạc nền: Phát nhạc nền trong khi tổng hợp lời nói.</li>
+        <li>Quản lý vai trò: Thêm quy tắc để xác định vai trò trong văn bản cần đọc to và sử dụng
+            loa được chỉ định để đọc to.
+        </li>
+        <li>Nhóm giọng nói: Đối với mỗi ký tự cụ thể phù hợp với một vai trò trừu tượng, một giọng
+            nói sẽ được chọn từ nhóm giọng nói và được gán cho ký tự đó.
+        </li>
+        <li>Quản lý động cơ: chỉnh sửa, thêm, xóa, sắp xếp và xuất dữ liệu cho động cơ.</li>
+        <li>Tải lại dữ liệu: Đọc lại file cấu hình và tải dữ liệu. Theo mặc định, nó được tải từ cơ
+            sở dữ liệu.
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Quản lý vai trò</h4>
+    <ul>
+        <li>Tên vai trò: Tên của vai trò cần khớp.</li>
+        <li>Biểu thức chính quy vai trò: Biểu thức chính quy khớp với tên vai trò. Nếu không được
+            điền, giá trị của tên vai trò sẽ được sử dụng.
+        </li>
+        <li>
+            Vai trò trừu tượng: Khi không được bật, tất cả các ký tự phù hợp sẽ sử dụng cùng một
+            giọng nói; khi được bật, điều đó có nghĩa đây là một vai trò trừu tượng (tương ứng với
+            nhiều ký tự cụ thể) và mỗi ký tự cụ thể sẽ rút ra một giọng nói từ nhóm giọng nói.
+        </li>
+        <li>Lookahead match: Quy tắc sẽ khớp với văn bản trước cuộc hội thoại.</li>
+        <li>Lookbehind match: Quy tắc sẽ khớp với văn bản sau cuộc trò chuyện.</li>
+        <li>Đầu tiên phần mềm sẽ thực hiện tất cả các trận đấu xuôi và chỉ thực hiện các trận đấu
+            lùi khi không có kết quả từ các trận đấu xuôi.
+        </li>
+        <li>Trong giao diện quản lý vai trò, nhấn và giữ nút Thêm để thêm người nói ngôn ngữ ứng
+            viên.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Quản lý động cơ</h4>
+    <ul>
+        <li>Loại: Loại động cơ. Hiện tại, chỉ có thể thêm công cụ http.</li>
+        <li>Mã: Biểu diễn bên trong của động cơ. Vui lòng sử dụng các ký tự chữ và số và dấu gạch
+            dưới.
+        </li>
+        <li>Tiêu đề yêu cầu: Tiêu đề yêu cầu được sử dụng khi gửi yêu cầu http.</li>
+        <li>URL: liên kết http. Vui lòng đính kèm các biểu thức javascript trong {{}}.</li>
+        <li>Các giá trị được trích dẫn được hỗ trợ trong URL:
+            <ul>
+                <li>voiceCode: mã loa</li>
+                <li>speakText: Văn bản cần tổng hợp</li>
+                <li>speakSpeed: tốc độ nói, phạm vi giá trị 0~100</li>
+                <li>speakVolume: âm lượng, phạm vi giá trị 0~100</li>
+                <li>params: mảng tham số, tương ứng với tham số của người nói, đã được phân đoạn
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Nhóm giọng nói</h4>
+    <ul>
+        <li>Vai trò trừu tượng: vai trò trừu tượng được xác định trong quản lý vai trò.</li>
+        <li>Giọng nhân vật: Mỗi người cụ thể tương ứng với nhân vật trừu tượng sẽ có một giọng nói
+            được chọn từ các giọng nói trong cùng một nhóm được gán cho nó.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Cài đặt</h4>
+    <ul>
+        <li>Quy tắc khớp vai trò: dùng để lọc bối cảnh pháp lý khi khớp vai trò đối thoại.
+        </li>
+        <li>Phân tích cấu trúc ngữ pháp (Chỉ hỗ trợ tiếng Trung): Nhập một đoạn văn bản, gắn thẻ văn
+            bản với các phần của lời nói và lấy cấu trúc ngữ pháp của câu. Đối với phần bảng lời
+            nói, vui lòng tham khảo phần cuối của trợ giúp.
+        </li>
+        <li>
+            Tự động gán giọng nói: Sau khi nhận dạng một người, hãy tự động chọn giọng nói từ nhóm
+            vai trò (trước tiên bạn cần xác định các vai trò trừu tượng và thiết lập nhóm vai trò).
+            Mối quan hệ gán sẽ được lưu vào bộ nhớ đệm cho đến khi bị bản ghi mới ghi đè.
+        </li>
+        <li>
+            Phân tích ký tự văn bản (Chỉ hỗ trợ tiếng Trung): Phân tích từ mới trong văn bản. Quá
+            trình phân tích tương đối dài. Sau khi phân tích xong nhấn Lưu để tạo ký tự trong phần
+            quản lý ký tự.
+        </li>
+        <li>Biểu thức chính quy tên ký tự: dùng để lọc ra các từ mới được phân tích trong phân tích
+            ký tự văn bản để lọc ra tên.
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Người khác</h4>
+    <ul>
+        <li>Nếu ứng dụng bị tắt ở chế độ nền, vui lòng đặt các quyền như tối ưu hóa pin, chạy nền,
+            khởi động liên quan và ngăn chặn chế độ ngủ (tùy thuộc vào điện thoại).
+        </li>
+        <li>Nếu thông báo lỗi chứa từ khóa zip khi nhập gói nén thì có thể đã xảy ra lỗi khi tải gói
+            nén xuống.
+        </li>
+        <li>Khi phần mềm gặp sự cố, nhật ký sẽ được sao chép vào clipboard. Vui lòng đính kèm nhật
+            ký đầy đủ khi báo cáo sự cố.
+        </li>
+        <li>Phiên bản hiện tại: v__VERSION_NAME__</li>
+        <li>Android ID: __ANDROID_ID__</li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Sonic</item>
+        <item>tunog touch</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Ingles</item>
+        <item>Chinese (Pinasimple)</item>
+        <item>Espanyol (Espanya)</item>
+        <item>Espanyol (Unyong Europeo)</item>
+        <item>Espanyol (Colombia)</item>
+        <item>Espanyol (Estados Unidos)</item>
+        <item>Arabic</item>
+        <item>Vietnamese</item>
+        <item>Bengali (India)</item>
+        <item>Gujarati (India)</item>
+        <item>Hindi (India)</item>
+        <item>Kannada (India)</item>
+        <item>Malayalam (India)</item>
+        <item>Marathi (India)</item>
+        <item>Nepali (Nepali)</item>
+        <item>Oriya (India)</item>
+        <item>Punjab (India)</item>
+        <item>Tamil (India)</item>
+        <item>Telugu (India)</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Khmer (Cambodia)</item>
+        <item>Ukrainian (Ukraine)</item>
+        <item>Turkish (Türkiye)</item>
+        <item>Thai (Thai)</item>
+        <item>Portuges (Brazil)</item>
+        <item>Russian (Russia)</item>
+        <item>Filipino (Pilipinas)</item>
+        <item>Deutsch (Deutschland)</item>
+        <item>čeština (Česko)</item>
+        <item>Nederlands (Nederland)</item>
+        <item>français (France)</item>
+        <item>italiano (Italia)</item>
+        <item>polski (Polska)</item>
+        <item>bahasa Indonesia (Indonesia)</item>
+        <item>Wikang Kurdo</item>
+        <item>Svenska (Sverige)</item>
+        <item>Kurdî (Kurmancî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Bagong pagtuklas ng salita</item>
+        <item>Modelo ng pagkilala sa entity</item>
+    </string-array>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="language_entries">
+        <item>English</item>
+        <item>简体中文</item>
+        <item>Español (España)</item>
+        <item>Español (Unión Europea)</item>
+        <item>Español (Colombia)</item>
+        <item>Español (Estados Unidos)</item>
+        <item>عربي</item>
+        <item>Tiếng Việt</item>
+        <item>বাংলা (ভারত)</item>
+        <item>ગુજરાતી (ભારત)</item>
+        <item>हिन्दी (भारत)</item>
+        <item>ಕನ್ನಡ (ಭಾರತ)</item>
+        <item>മലയാളം (ഇന്ത്യ)</item>
+        <item>मराठी (भारत)</item>
+        <item>नेपाली (नेपाल)</item>
+        <item>ଓଡ଼ିଆ (ଭାରତ)</item>
+        <item>ਪੰਜਾਬੀ (ਭਾਰਤ)</item>
+        <item>தமிழ் (இந்தியா)</item>
+        <item>తెలుగు (భారతదేశం)</item>
+        <item>اردو (پاکستان)</item>
+        <item>ខ្មែរ (កម្ពុជា)</item>
+        <item>Українська (Україна)</item>
+        <item>Türkçe (Türkiye)</item>
+        <item>ไทย (ไทย)</item>
+        <item>Português (Brasil)</item>
+        <item>Русский (Россия)</item>
+        <item>Filipino (Pilipinas)</item>
+        <item>Deutsch (Deutschland)</item>
+        <item>Čeština (Česko)</item>
+        <item>Nederlands (Nederland)</item>
+        <item>Français (France)</item>
+        <item>Italiano (Italia)</item>
+        <item>Polski (Polska)</item>
+        <item>Bahasa Indonesia (Indonesia)</item>
+        <item>کوردیی ناوەندی</item>
+        <item>Svenska (Sverige)</item>
+        <item>Kurdî (Kurmancî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Обнаружение нового имени</item>
+        <item>Модель распознавания именованных сущностей</item>
+    </string-array>
+</resources>

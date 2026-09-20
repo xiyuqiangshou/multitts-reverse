@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@id/group_profile" android:checkableBehavior="single">
+        <item android:icon="@drawable/ic_setting" android:id="@id/nav_setting" android:title="@string/action_setting" />
+    </group>
+    <group android:id="@id/group_main" android:checkableBehavior="single">
+        <item android:icon="@drawable/ic_replace" android:id="@id/nav_replace" android:title="@string/action_replace" />
+        <item android:icon="@drawable/ic_role" android:id="@id/nav_role" android:title="@string/action_role" />
+        <item android:icon="@drawable/ic_resource_pool" android:id="@id/nav_voice_pool" android:title="@string/action_voice_pool" />
+        <item android:icon="@drawable/ic_engine" android:id="@id/nav_engine" android:title="@string/action_engine" />
+    </group>
+    <group android:id="@id/group_help" android:checkableBehavior="single">
+        <item android:icon="@drawable/ic_help" android:id="@id/nav_tips" android:title="@string/action_tips" />
+        <item android:icon="@drawable/ic_log_1" android:id="@id/nav_view_log" android:title="@string/action_view_log" />
+    </group>
+    <group android:id="@id/group_utils" android:checkableBehavior="single">
+        <item android:icon="@drawable/ic_delete" android:id="@id/nav_clean" android:title="@string/clean_speaker" />
+        <item android:icon="@drawable/ic_forward" android:id="@id/nav_forwarding" android:title="@string/forward_service" android:checkable="true" app:actionLayout="@layout/menu_switch" />
+    </group>
+    <group android:id="@id/group_channels" android:checkableBehavior="single">
+        <item android:icon="@drawable/ic_update_2" android:id="@id/nav_update" android:title="@string/config_update_channel" />
+        <item android:icon="@drawable/ic_resource_1" android:id="@id/nav_resource" android:title="@string/config_resource_channel" />
+    </group>
+</menu>

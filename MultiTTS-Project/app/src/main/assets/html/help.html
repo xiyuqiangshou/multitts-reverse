@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Help</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: __FONT_COLOR__;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Basic Operation</h4>
+    <ul>
+        <li>Click to select/deselect the main synthesis engine</li>
+        <li>Long press to select/deselect the dialogue synthesis engine</li>
+        <li>Long press the avatar to edit the speaker</li>
+        <li>Long press the offline/online icon to delete the speaker</li>
+        <li>Press and hold the speaker's name and drag it up or down to sort</li>
+        <li>Press and hold the speaker's name and slide left and right to delete</li>
+        <li>For other lists, slide left and right to delete, drag up and down to sort</li>
+        <li>The main interface pulls down at the top of the list to display the batch management
+            interface
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Function Description</h4>
+    <ul>
+        <li>Import data: Select a compressed package containing supported engine data to import. The
+            first layer of the zip file must contain a valid config.yaml file.
+        </li>
+        <li>Replacement: The pronunciation of words can be corrected in this interface, which
+            supports both normal replacement and regular replacement.
+        </li>
+        <li>Background music: Play background music while synthesizing speech.</li>
+        <li>Role management: Add rules to identify roles in the text to be read aloud and use
+            specified speakers to read aloud.
+        </li>
+        <li>Voice Pool: For each specific character that matches an abstract role, a voice is
+            selected from the voice pool and assigned to that character.
+        </li>
+        <li>Engine management: edit, add, delete, sort and export data for engines.</li>
+        <li>Reload data: Reread the configuration file and load the data. By default, it is loaded
+            from the database.
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Role Management</h4>
+    <ul>
+        <li>Role Name: The name of the role to match.</li>
+        <li>Role regular expression: A regular expression that matches the role name. If not filled
+            in, the value of the role name is used.
+        </li>
+        <li>
+            Abstract role: When not enabled, all matching characters will use the same voice; when
+            enabled, it means that this is an abstract role (corresponding to multiple specific
+            characters), and each specific character will draw a voice from the voice pool.
+        </li>
+        <li>Lookahead match: The rule will match the text before the conversation.</li>
+        <li>Lookbehind match: The rule will match the text after the conversation.</li>
+        <li>Match Mode:
+            <ul>
+                <li>Text: Match all text content that conforms to the regular expression.</li>
+                <li>Language: Match text that corresponds to the selected language.</li>
+                <li>Role: Match the speaker of the dialogue content.</li>
+            </ul>
+        </li>
+        <li>The software will first perform all forward matches, and only perform backward matches
+            when there are no results from the forward matches.
+        </li>
+        <li>In the role management interface, long press the Add button to add candidate language
+            speakers.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Engine Management</h4>
+    <ul>
+        <li>Type: Engine type. Currently, only the http engine can be added.</li>
+        <li>Code: The internal representation of the engine. Please use alphanumeric characters and
+            underscores.
+        </li>
+        <li>Request header: The request header used when sending an http request.</li>
+        <li>URL: http link. Please enclose javascript expressions in {{}}.</li>
+        <li>Supported quoted values in URLs:
+            <ul>
+                <li>voiceCode: speaker code</li>
+                <li>speakText: The text to be synthesized</li>
+                <li>speakSpeed: speaking speed, value range 0~100</li>
+                <li>speakVolume: volume, value range 0~100</li>
+                <li>params: parameter array, corresponding to the speaker's parameters, which have
+                    been segmented
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Voices Pool</h4>
+    <ul>
+        <li>Abstract role: abstract role defined in role management.</li>
+        <li>Character Voice: Each specific person corresponding to the abstract character will have
+            one voice selected from the voices in the same group assigned to it.
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>Settings</h4>
+    <ul>
+        <li>Role matching rules: used to filter out legal contexts when matching dialogue roles. Use
+            __ROLE__ to refer to the role to be matched, and __OTHER__ to refer to other roles.
+        </li>
+        <li>Grammatical structure analysis (Only supports Chinese): Input a piece of text, tag the
+            text with parts of speech, and obtain the sentence grammatical structure. For the part
+            of speech table, please refer to the end of the help.
+        </li>
+        <li>
+            Automatically assign voices: After recognizing a person, automatically select voices
+            from the role pool (you need to define abstract roles and set up the role pool first).
+            The assignment relationship will be cached until it is overwritten by a new record.
+        </li>
+        <li>
+            Text character analysis (Only supports Chinese): Analyze new words in the text. The
+            analysis process is relatively long. After the analysis is completed, click Save to
+            generate the character in the character management.
+        </li>
+        <li>Character name regular expression: used to filter out new words analyzed in text
+            character analysis to filter out names.
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Forwarder</h4>
+    <ul>
+        <li>Text-to-Speech Interface ( http://localhost:8774/forward ), GET parameters:
+            <ul>
+                <li>text: Text to be synthesized</li>
+                <li>speed: Speech rate, value range 0~100</li>
+                <li>volume: Volume level, value range 0~100</li>
+                <li>pitch: Pitch level, value range 0~100</li>
+                <li>voice: Voice ID, use /voices endpoint to get all available speakers</li>
+            </ul>
+        </li>
+        <li>Voice List Interface ( http://localhost:8774/voices ), no parameters.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Custom Tags</h4>
+    <ul>
+        <li><strong>[[Custom Tag]]</strong> Content wrapped in this format will be treated as a tag and will
+            not be synthesized.
+        </li>
+        <li><strong>[[PAUSE:1000]]</strong> Indicates a pause of 1000ms.</li>
+        <li><strong>[[SPEED:1.2]]</strong> Sets the speech rate to 1.2 times the default.</li>
+        <li><strong>[[PITCH:1.2]]</strong> Sets the pitch to 1.2 times the default.</li>
+        <li><strong>[[VOLUME:1.2]]</strong> Sets the volume to 1.2 times the default.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Others</h4>
+    <ul>
+        <li>To manually specify the speaker in the text, wrap the speaker's name with &lt;&lt;&gt;&gt;
+            inside the quotation marks. Example: "&lt;&lt;John&gt;&gt;This sentence is spoken by
+            me."
+        </li>
+        <li>If the app is killed in the background, please set permissions such as battery
+            optimization, background running, associated startup, and prevent sleep (depending on
+            the phone).
+        </li>
+        <li>If the error message contains the keyword zip when importing a compressed package, an
+            error may have occurred while downloading the compressed package.
+        </li>
+        <li>When the software crashes, the log will be copied to the clipboard. Please attach the
+            complete log when reporting the problem.
+        </li>
+        <li>Current version: v__VERSION_NAME__</li>
+        <li>Android ID: __ANDROID_ID__</li>
+    </ul>
+</div>
+
+</body>
+</html>

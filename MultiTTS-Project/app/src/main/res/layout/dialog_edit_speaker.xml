@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="20.0dp" android:paddingRight="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50.0dp" android:layout_marginTop="5.0dp" android:layout_marginBottom="-10.0dp">
+            <TextView android:textSize="19.0sp" android:textColor="?cardTextColor" android:gravity="start|center" android:id="@id/speaker_edit_title" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/edit_speaker" android:paddingStart="18.0dp" app:layout_constraintEnd_toStartOf="@id/speaker_export" app:layout_constraintStart_toStartOf="parent" app:layout_constraintWidth_default="percent" app:layout_constraintWidth_percent="0.88" />
+            <androidx.appcompat.widget.AppCompatImageButton android:gravity="center" android:id="@id/speaker_export" android:background="?android:selectableItemBackgroundBorderless" android:padding="5.0dp" android:layout_width="0.0dp" android:layout_height="match_parent" android:src="@drawable/ic_export" android:scaleType="fitCenter" android:contentDescription="@string/desc_export" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/speaker_edit_title" app:layout_constraintWidth_percent="0.12" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/edit_code_box" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/speaker_code" android:layout_weight="1.0" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_code" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/edit_locale_box" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/speaker_locale" android:layout_weight="1.0" android:paddingEnd="5.0dp" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_locale" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/speaker_name" android:layout_weight="1.0" android:paddingStart="5.0dp" app:endIconMode="none" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_name" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:paddingTop="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="@string/speaker_gender" android:layout_weight="1.0" android:paddingEnd="5.0dp" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/edit_gender" android:padding="2.0dp" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="match_parent" android:layout_height="47.0dp" android:popupBackground="?dropDownBgColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="@string/speaker_type" android:layout_weight="1.0" android:paddingStart="5.0dp" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/edit_type" android:padding="2.0dp" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="match_parent" android:layout_height="47.0dp" android:popupBackground="?dropDownBgColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:paddingTop="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="@string/speaker_speed" android:layout_weight="1.0" android:paddingEnd="5.0dp" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_speed" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="@string/speaker_volume" android:layout_weight="1.0" android:paddingStart="5.0dp" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_volume" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:paddingTop="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="@string/speaker_pitch" android:layout_weight="1.0" android:paddingEnd="5.0dp" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_pitch" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="@string/speaker_sample_rate" android:layout_weight="1.0" android:paddingStart="5.0dp" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/edit_sample" android:padding="2.0dp" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="match_parent" android:layout_height="47.0dp" android:popupBackground="?dropDownBgColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/speaker_avatar" android:layout_weight="1.0" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_avatar" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/speaker_desc" android:layout_weight="1.0" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_desc" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/dynamic_sub" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/edit_param_box" android:visibility="gone" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/speaker_param" android:layout_weight="1.0" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_param" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/edit_note_box" android:visibility="gone" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/speaker_note" android:layout_weight="1.0" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_note" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/edit_extend_ui_box" android:visibility="gone" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/speaker_extend_ui" android:layout_weight="1.0" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Theme.MultiTTS.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/edit_extend_ui" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

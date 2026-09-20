@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Hulp</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: _FONT_COLOR_;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Basisbediening</h4>
+    <ul>
+        <li>Tik om de hoofd-synthese-engine te selecteren/deselecteren</li>
+        <li>Lang drukken om de dialoog-synthese-engine te selecteren/deselecteren</li>
+        <li>Lang drukken op de avatar om de spreker te bewerken</li>
+        <li>Lang drukken op het offline/online-pictogram om de spreker te verwijderen</li>
+        <li>Houd de naam van de spreker vast en sleep omhoog of omlaag om te sorteren</li>
+        <li>Houd de naam van de spreker vast en veeg naar links of rechts om te verwijderen</li>
+        <li>Voor andere lijsten: veeg links/rechts om te verwijderen, sleep omhoog/omlaag om te sorteren</li>
+        <li>Trek omlaag bovenaan de lijst in het hoofdscherm om de batchbeheer-interface weer te geven</li>
+    </ul>
+</div>
+<div>
+    <h4>Functiebeschrijving</h4>
+    <ul>
+        <li>Gegevens importeren: selecteer een gecomprimeerd pakket met ondersteunde enginegegevens. De eerste laag van het zip-bestand moet een geldig config.yaml-bestand bevatten.</li>
+        <li>Vervanging: de uitspraak van woorden kan hier worden gecorrigeerd, ondersteunt normale en reguliere vervanging.</li>
+        <li>Achtergrondmuziek: speel muziek af tijdens spraaksynthese.</li>
+        <li>Rolbeheer: voeg regels toe om rollen in de tekst te herkennen en wijs specifieke sprekers toe.</li>
+        <li>Stemmenpool: voor elke rol wordt een stem uit de pool gekozen en toegewezen.</li>
+        <li>Enginebeheer: bewerken, toevoegen, verwijderen, sorteren en exporteren van enginegegevens.</li>
+        <li>Gegevens opnieuw laden: configuratiebestand opnieuw inlezen en laden. Standaard uit de database.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Rolbeheer</h4>
+    <ul>
+        <li>Rolnaam: de naam van de rol die overeen moet komen.</li>
+        <li>Reguliere expressie voor rol: een reguliere expressie die de rolnaam matcht. Indien leeg, wordt de rolnaam gebruikt.</li>
+        <li>Abstracte rol: indien uitgeschakeld gebruiken alle overeenkomende karakters dezelfde stem. Indien ingeschakeld, wordt elke specifieke rol toegewezen aan een stem uit de pool.</li>
+        <li>Vooruitkijk-match: de regel matcht tekst vóór de dialoog.</li>
+        <li>Achteruitkijk-match: de regel matcht tekst na de dialoog.</li>
+        <li>Matchmodus:
+            <ul>
+                <li>Tekst: matcht alle tekst die voldoet aan de reguliere expressie.</li>
+                <li>Taal: matcht tekst die overeenkomt met de geselecteerde taal.</li>
+                <li>Rol: matcht de spreker van de dialoog.</li>
+            </ul>
+        </li>
+        <li>De software voert eerst alle vooruitkijkmatches uit. Alleen als er geen resultaten zijn, worden achteruitkijkmatches uitgevoerd.</li>
+        <li>In het rolbeheer: houd de knop Toevoegen lang ingedrukt om kandidaatsprekers per taal toe te voegen.</li>
+    </ul>
+</div>
+<div>
+    <h4>Enginebeheer</h4>
+    <ul>
+        <li>Type: type engine. Momenteel kan alleen de HTTP-engine worden toegevoegd.</li>
+        <li>Code: interne naam van de engine. Gebruik alleen letters, cijfers en underscores.</li>
+        <li>Verzoekheader: de header die wordt gebruikt bij HTTP-verzoeken.</li>
+        <li>URL: HTTP-link. Plaats JavaScript-expressies tussen {{}}.</li>
+        <li>Ondersteunde waarden in URL’s:
+            <ul>
+                <li>voiceCode: sprekercode</li>
+                <li>speakText: te synthetiseren tekst</li>
+                <li>speakSpeed: snelheid, bereik 0~100</li>
+                <li>speakVolume: volume, bereik 0~100</li>
+                <li>params: parameterarray die overeenkomt met de sprekerparameters</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Stemmenpool</h4>
+    <ul>
+        <li>Abstracte rol: gedefinieerd in rolbeheer.</li>
+        <li>Karakterstem: elke specifieke rol krijgt een stem toegewezen uit dezelfde groep.</li>
+    </ul>
+</div>
+<div>
+    <h4>Instellingen</h4>
+    <ul>
+        <li>Rol-matchregels: gebruikt om geldige contexten te filteren bij dialoogmatching. Gebruik _ROLE_ voor de rol en _OTHER_ voor andere rollen.</li>
+        <li>Grammaticale structuuranalyse (alleen Chinees): tekst analyseren en labelen.</li>
+        <li>Automatisch stemmen toewijzen: na herkenning automatisch een stem toewijzen uit de pool. Toewijzingen worden gecachet.</li>
+        <li>Tekstanalyse (alleen Chinees): nieuwe woorden analyseren. Klik op Opslaan om een nieuw personage te genereren.</li>
+        <li>Reguliere expressie voor namen: filtert namen uit de geanalyseerde tekst.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Doorsturen</h4>
+    <ul>
+        <li>TTS-interface ( http://localhost:8774/forward ), GET-parameters:
+            <ul>
+                <li>text: tekst om te synthetiseren</li>
+                <li>speed: snelheid, bereik 0~100</li>
+                <li>volume: volume, bereik 0~100</li>
+                <li>pitch: toonhoogte, bereik 0~100</li>
+                <li>voice: stem-ID, gebruik /voices om alle beschikbare stemmen te krijgen</li>
+            </ul>
+        </li>
+        <li>Stemlijst-interface ( http://localhost:8774/voices ), geen parameters.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Aangepaste tags</h4>
+    <ul>
+        <li><strong>[[Custom Tag]]</strong> Inhoud in dit formaat wordt als tag behandeld en niet uitgesproken.</li>
+        <li><strong>[[PAUSE:1000]]</strong> Pauze van 1000 ms.</li>
+        <li><strong>[[SPEED:1.2]]</strong> Zet de snelheid op 1,2 keer.</li>
+        <li><strong>[[PITCH:1.2]]</strong> Zet de toonhoogte op 1,2 keer.</li>
+        <li><strong>[[VOLUME:1.2]]</strong> Zet het volume op 1,2 keer.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Overig</h4>
+    <ul>
+        <li>Om de spreker handmatig in de tekst aan te geven, plaats de naam tussen &lt;&lt;&gt;&gt;. Voorbeeld: "&lt;&lt;Jan&gt;&gt;Deze zin wordt door mij gesproken."</li>
+        <li>Als de app in de achtergrond wordt afgesloten, stel machtigingen in zoals batterij-optimalisatie, achtergronduitvoering, automatisch starten en slaapstand voorkomen (afhankelijk van het apparaat).</li>
+        <li>Als een foutmelding het woord “zip” bevat bij importeren, is er waarschijnlijk een fout opgetreden bij het downloaden.</li>
+        <li>Wanneer de software crasht, wordt het logboek naar het klembord gekopieerd. Voeg dit logboek toe bij het melden van het probleem.</li>
+        <li>Huidige versie: v_VERSION_NAME_</li>
+        <li>Android-ID: _ANDROID_ID_</li>
+    </ul>
+</div>
+
+</body>
+</html>

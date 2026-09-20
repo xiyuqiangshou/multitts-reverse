@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory app:title="@string/setting_basic">
+        <SwitchPreference app:icon="@drawable/ic_battery" app:iconSize="5.0dp" app:key="config_nokill" app:summaryOff="@string/action_nokill_off" app:summaryOn="@string/action_nokill_on" app:title="@string/action_nokill" />
+        <SwitchPreference app:icon="@drawable/ic_configure" app:key="config_priority" app:summaryOff="@string/action_priority_off" app:summaryOn="@string/action_priority_on" app:title="@string/action_priority" />
+        <SwitchPreference app:defaultValue="false" app:icon="@drawable/ic_dialog" app:key="config_cvst" app:summaryOff="@string/action_cvst_summary_off" app:summaryOn="@string/action_cvst_summary_on" app:title="@string/action_cvst" />
+        <SwitchPreference app:icon="@drawable/ic_notify" app:key="config_notify" app:summaryOff="@string/action_notify__off" app:summaryOn="@string/action_notify__on" app:title="@string/action_notify_on" />
+        <SwitchPreference app:defaultValue="false" app:icon="@drawable/ic_wake" app:key="config_wake_lock" app:summary="@string/wake_lock_summary" app:title="@string/wake_lock" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="false" app:icon="@drawable/ic_multi_selected_2" app:key="config_multiple_select" app:summaryOff="@string/config_multiple_select_off" app:summaryOn="@string/config_multiple_select_on" app:title="@string/config_multiple_select" app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_role">
+        <EditTextPreference app:defaultValue="@string/name_context_regex_dft" app:icon="@drawable/ic_dict" app:key="nature_match_regex" app:title="@string/nature_regex" app:useSimpleSummaryProvider="true" />
+        <EditTextPreference app:icon="@drawable/ic_nature" app:key="nature_test_text" app:title="@string/titel_test_recognizer" app:useSimpleSummaryProvider="true" />
+        <ListPreference app:entries="@array/nda_entries" app:entryValues="@array/nda_entry_values" app:icon="@drawable/ic_algorithm_2" app:key="config_name_discoverer_x" app:title="@string/config_name_discover_algorithm" app:useSimpleSummaryProvider="true" />
+        <ListPreference app:entries="@array/language_detector_entries" app:entryValues="@array/language_detector_entry_values" app:icon="@drawable/ic_algorithm_2" app:key="config_language_detector_x" app:title="@string/config_language_detector" app:useSimpleSummaryProvider="true" />
+        <EditTextPreference app:defaultValue="@string/female_name_regex_dft" app:icon="@drawable/ic_female_s" app:key="female_name_regex" app:summary="@string/female_name_regex_summary" app:title="@string/female_name_regex" app:useSimpleSummaryProvider="false" />
+        <EditTextPreference app:defaultValue="@string/male_name_regex_dft" app:icon="@drawable/ic_male_s" app:key="male_name_regex" app:summary="@string/male_name_regex_summary" app:title="@string/male_name_regex" app:useSimpleSummaryProvider="false" />
+        <SwitchPreference app:icon="@drawable/ic_role_assign" app:key="config_auto_assign_role" app:summaryOff="@string/config_auto_assign_role_off" app:summaryOn="@string/config_auto_assign_role_on" app:title="@string/action_auto_assign" />
+        <SwitchPreference app:icon="@drawable/ic_record" app:key="config_record_voice" app:summaryOff="@string/action_record_voice_off" app:summaryOn="@string/action_record_voice_on" app:title="@string/action_record_voice" />
+        <SwitchPreference app:icon="@drawable/ic_last_text" app:key="config_record_text" app:summaryOff="@string/action_record_text_off" app:summaryOn="@string/action_record_text_on" app:title="@string/action_record_text" />
+        <SwitchPreference app:icon="@drawable/ic_continue" app:key="config_continue_dialogue" app:summaryOff="@string/action_continue_off" app:summaryOn="@string/action_continue_on" app:title="@string/action_continue" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_text_preprocess">
+        <SwitchPreference app:defaultValue="false" app:icon="@drawable/ic_emoji" app:key="config_replace_emoji" app:summary="@string/desc_replace_emoji" app:title="@string/config_emoji" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="true" app:icon="@drawable/ic_separate_1" app:key="config_separate_english" app:summaryOff="@string/config_separate_english_off" app:summaryOn="@string/config_separate_english_on" app:title="@string/config_separate_english" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="true" app:icon="@drawable/ic_punc_1" app:key="config_filter_unspoken" app:summaryOff="@string/config_filter_unspoken_off" app:summaryOn="@string/config_filter_unspoken_on" app:title="@string/config_filter_unspoken" app:useSimpleSummaryProvider="true" />
+        <SeekBarPreference android:max="256" app:icon="@drawable/ic_text_length_2" app:key="config_max_sentence_length" app:min="32" app:showSeekBarValue="true" app:summary="@string/config_max_sentence_length_summary" app:title="@string/config_max_sentence_length" app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_audio">
+        <SwitchPreference app:defaultValue="false" app:icon="@drawable/ic_skip" app:key="config_check_silence" app:summaryOff="@string/check_silence_off" app:summaryOn="@string/check_silence_on" app:title="@string/check_silence" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="false" app:icon="@drawable/ic_stream" app:key="config_decode_stream" app:summaryOff="@string/decode_stream_off" app:summaryOn="@string/decode_stream_on" app:title="@string/decode_stream" app:useSimpleSummaryProvider="true" />
+        <ListPreference app:entries="@array/sample_rate_entries" app:entryValues="@array/sample_rate_entry_values" app:icon="@drawable/ic_samplerate_1" app:key="config_min_sample_rate_x" app:summary="@string/config_min_sample_rate_summary" app:title="@string/config_min_sample_rate" app:useSimpleSummaryProvider="true" />
+        <ListPreference app:entries="@array/audio_processor_entries" app:entryValues="@array/audio_processor_entry_values" app:icon="@drawable/ic_algorithm_2" app:key="config_audio_processor_x" app:title="@string/config_audio_processor" app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_other">
+        <EditTextPreference app:icon="@drawable/ic_text" app:key="audition_text" app:title="@string/audition_text" app:useSimpleSummaryProvider="true" />
+        <ListPreference app:defaultValue="" app:entries="@array/language_entries" app:entryValues="@array/language_entry_values" app:icon="@drawable/ic_language" app:key="config_language" app:summary="@string/config_language_summary" app:title="@string/config_language" app:useSimpleSummaryProvider="true" />
+        <Preference app:defaultValue="" app:icon="@drawable/ic_add_to" app:key="add_to_legado" app:summary="@string/add_to_legado_summary" app:title="@string/add_to_legado" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="true" app:icon="@drawable/ic_check" app:key="config_check_network" app:summaryOff="@string/config_check_network_off" app:summaryOn="@string/config_check_network_on" app:title="@string/check_network" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="false" app:icon="@drawable/ic_debug" app:key="config_debug_mode" app:summary="@string/debug_mode_summary" app:title="@string/debug_mode" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="true" app:icon="@drawable/ic_filter_2" app:key="config_filter_language" app:summaryOff="@string/config_filter_language_off" app:summaryOn="@string/config_filter_language_on" app:title="@string/config_filter_language" app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_person">
+        <Preference app:defaultValue="" app:icon="@drawable/ic_text_analyze" app:key="analyze_role" app:summary="@string/analyze_role_summary" app:title="@string/analyze_role" app:useSimpleSummaryProvider="true" />
+        <EditTextPreference app:defaultValue="@string/person_name_regex_dft" app:icon="@drawable/ic_person" app:key="person_name_regex" app:summary="@string/person_name_regex_summary" app:title="@string/person_name_regex" app:useSimpleSummaryProvider="false" />
+        <SwitchPreference app:defaultValue="true" app:icon="@drawable/ic_new_2" app:key="config_new_person_only" app:summaryOff="@string/new_person_only_off" app:summaryOn="@string/new_person_only_on" app:title="@string/new_person_only" app:useSimpleSummaryProvider="true" />
+        <SeekBarPreference app:defaultValue="30" app:icon="@drawable/ic_max_val" app:key="config_max_auto_checked_person" app:showSeekBarValue="true" app:title="@string/max_auto_checked_person" app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_cache">
+        <SeekBarPreference android:max="300" app:defaultValue="50" app:icon="@drawable/ic_max_val" app:key="config_max_cache_voice_num" app:min="3" app:showSeekBarValue="true" app:title="@string/max_cache_voice_num" app:useSimpleSummaryProvider="true" />
+        <SeekBarPreference android:max="32" app:defaultValue="10" app:icon="@drawable/ic_max_val" app:key="config_max_cache_engine_num" app:min="3" app:showSeekBarValue="true" app:title="@string/max_cache_engine_num" app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_speaker_ui">
+        <SwitchPreference app:defaultValue="true" app:icon="@drawable/ic_hide_ui" app:key="config_hide_param_editor" app:summaryOff="@string/config_hide_param_editor_off" app:summaryOn="@string/config_hide_param_editor_on" app:title="@string/hide_param_editor" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="true" app:icon="@drawable/ic_hide_ui" app:key="config_hide_note_editor" app:summaryOff="@string/config_hide_note_editor_off" app:summaryOn="@string/config_hide_note_editor_on" app:title="@string/hide_note_editor" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference app:defaultValue="true" app:icon="@drawable/ic_hide_ui" app:key="config_hide_extend_editor" app:summaryOff="@string/config_hide_extend_editor_off" app:summaryOn="@string/config_hide_extend_editor_on" app:title="@string/hide_extend_editor" app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/setting_about">
+        <Preference app:icon="@drawable/ic_grateful" app:key="about_grateful" app:title="@string/setting_about_grateful" />
+        <Preference app:icon="@drawable/ic_license" app:key="about_license" app:title="@string/setting_about_license" />
+        <Preference app:icon="@drawable/ic_statement" app:key="about_disclaimer" app:title="@string/config_disclaimer" />
+    </PreferenceCategory>
+</PreferenceScreen>

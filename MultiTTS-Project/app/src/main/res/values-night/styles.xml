@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AppCompat.DayNight" parent="@style/Theme.AppCompat" />
+    <style name="Theme.AppCompat.DayNight.DarkActionBar" parent="@style/Theme.AppCompat" />
+    <style name="Theme.AppCompat.DayNight.Dialog" parent="@style/Theme.AppCompat.Dialog" />
+    <style name="Theme.AppCompat.DayNight.Dialog.Alert" parent="@style/Theme.AppCompat.Dialog.Alert" />
+    <style name="Theme.AppCompat.DayNight.Dialog.MinWidth" parent="@style/Theme.AppCompat.Dialog.MinWidth" />
+    <style name="Theme.AppCompat.DayNight.DialogWhenLarge" parent="@style/Theme.AppCompat.DialogWhenLarge" />
+    <style name="Theme.AppCompat.DayNight.NoActionBar" parent="@style/Theme.AppCompat.NoActionBar" />
+    <style name="Theme.Material3.DayNight.BottomSheetDialog" parent="@style/Theme.Material3.Dark.BottomSheetDialog" />
+    <style name="Theme.MaterialComponents.DayNight" parent="@style/Theme.MaterialComponents" />
+    <style name="Theme.MaterialComponents.DayNight.BottomSheetDialog" parent="@style/Theme.MaterialComponents.BottomSheetDialog" />
+    <style name="Theme.MaterialComponents.DayNight.Bridge" parent="@style/Theme.MaterialComponents.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.DarkActionBar" parent="@style/Theme.MaterialComponents" />
+    <style name="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge" parent="@style/Theme.MaterialComponents.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog" parent="@style/Theme.MaterialComponents.Dialog" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.Alert" parent="@style/Theme.MaterialComponents.Dialog.Alert" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.Alert.Bridge" parent="@style/Theme.MaterialComponents.Dialog.Alert.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.Bridge" parent="@style/Theme.MaterialComponents.Dialog.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.FixedSize" parent="@style/Theme.MaterialComponents.Dialog.FixedSize" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge" parent="@style/Theme.MaterialComponents.Dialog.FixedSize.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.MinWidth" parent="@style/Theme.MaterialComponents.Dialog.MinWidth" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.MinWidth.Bridge" parent="@style/Theme.MaterialComponents.Dialog.MinWidth.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.DialogWhenLarge" parent="@style/Theme.MaterialComponents.DialogWhenLarge" />
+    <style name="Theme.MaterialComponents.DayNight.NoActionBar" parent="@style/Theme.MaterialComponents.NoActionBar" />
+    <style name="Theme.MaterialComponents.DayNight.NoActionBar.Bridge" parent="@style/Theme.MaterialComponents.NoActionBar.Bridge" />
+    <style name="Theme.MultiTTS" parent="@style/Theme.MaterialComponents.DayNight">
+        <item name="android:windowBackground">@color/night_bg2</item>
+        <item name="android:soundEffectsEnabled">false</item>
+        <item name="android:statusBarColor">@color/blue4</item>
+        <item name="android:navigationBarColor">@color/blue4</item>
+        <item name="bottomToolbarBg">@color/bottom_toolbar_bgn</item>
+        <item name="cardBackground">@color/blue4v</item>
+        <item name="cardEnable">@color/enable_n</item>
+        <item name="cardSubEnable">@color/enable_sn</item>
+        <item name="cardTextColor">@color/white1</item>
+        <item name="checkBoxColor">@color/blue5</item>
+        <item name="colorAccent">@color/teal_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorPrimary">@color/blue4</item>
+        <item name="colorPrimaryVariant">@color/blue4</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="dialogItemBg">@color/night_bg2</item>
+        <item name="dropDownBgColor">@color/simple_list_night</item>
+        <item name="headerBgColor">@color/header_bg_night</item>
+        <item name="headerTitleColor">@color/header_title_night</item>
+        <item name="iconColor">@color/iconNight</item>
+        <item name="layoutBgColor">@color/night_bg2</item>
+        <item name="navItemFontColor">@color/teal_200</item>
+        <item name="naviBgColor">@color/night_bg3</item>
+        <item name="popupMenuBackground">@color/popup_menu_night</item>
+        <item name="separateLineColor">@color/separate_line_night</item>
+        <item name="simpleListItem">@color/simple_list_night</item>
+        <item name="tabTextColor">@color/white1</item>
+    </style>
+    <style name="Theme.MultiTTS.AppBarOverlay" parent="@style/ThemeOverlay.AppCompat.ActionBar" />
+    <style name="Theme.MultiTTS.DialogTheme" parent="@style/Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="colorAccent">@color/blue5</item>
+    </style>
+    <style name="Theme.MultiTTS.PopupOverlay" parent="@style/ThemeOverlay.AppCompat.Dark" />
+    <style name="Theme.MultiTTS.TextInputEditText" parent="">
+        <item name="colorAccent">@color/blue7</item>
+        <item name="colorPrimary">@color/blue7</item>
+    </style>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Instellingen</item>
+        <item>Stem wijzigen</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Engels</item>
+        <item>Chinees (Vereenvoudigd)</item>
+        <item>Spaans (Spanje)</item>
+        <item>Spaans (Europese Unie)</item>
+        <item>Spaans (Colombia)</item>
+        <item>Spaans (VS)</item>
+        <item>Arabisch</item>
+        <item>Vietnamees (Vietnam)</item>
+        <item>Bengaals (India)</item>
+        <item>Gujarati (India)</item>
+        <item>Hindi (India)</item>
+        <item>Kannada (India)</item>
+        <item>Malayalam (India)</item>
+        <item>Marathi (India)</item>
+        <item>Nepalees (Nepal)</item>
+        <item>Oriya (India)</item>
+        <item>Punjabi (India)</item>
+        <item>Tamil (India)</item>
+        <item>Telugu (India)</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Khmer (Cambodja)</item>
+        <item>Oekraïens (Oekraïne)</item>
+        <item>Turks (Turkije)</item>
+        <item>Thais (Thailand)</item>
+        <item>Portugees (Brazilië)</item>
+        <item>Russisch (Rusland)</item>
+        <item>Filipijns (Filipijnen)</item>
+        <item>Duits (Duitsland)</item>
+        <item>Tsjjechisch (Tsjechië)</item>
+        <item>Nederlands (Nederland)</item>
+        <item>Frans (Frankrijk)</item>
+        <item>Italiaans (Italië)</item>
+        <item>Pools (Polen)</item>
+        <item>Indonesisch (Indonesië)</item>
+        <item>Centraal-Koerdisch (کوردیی ناوەندی)</item>
+        <item>Zweeds (Zweden)</item>
+        <item>Koerdisch (Kurmancî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Nieuwe woorden leren</item>
+        <item>Objectherkenningsmodel</item>
+    </string-array>
+</resources>

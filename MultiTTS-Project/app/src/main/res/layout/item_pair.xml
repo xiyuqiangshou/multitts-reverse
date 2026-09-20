@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingTop="12.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:textColorHint="@color/mtrl_textinput_default_box_stroke_color" android:id="@id/sub_box" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/speaker_style" app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color" app:endIconTint="@color/mtrl_textinput_default_box_stroke_color" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/sub_value" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

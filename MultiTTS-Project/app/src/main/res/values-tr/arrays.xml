@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Sonik</item>
+        <item>Ses dokunuşu</item>
+    </string-array>
+    <string-array name="language_detector_entries">
+        <item>Optimize et</item>
+        <item>Medya Hattı</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>İngilizce</item>
+        <item>Çince (Basitleştirilmiş)</item>
+        <item>İspanyolca (İspanya)</item>
+        <item>İspanyolca (Avrupa Birliği)</item>
+        <item>İspanyolca (Kolombiya)</item>
+        <item>İspanyolca (Amerika Birleşik Devletleri)</item>
+        <item>Arapça</item>
+        <item>Vietnam</item>
+        <item>Bengalce (Hindistan)</item>
+        <item>Gujarati (Hindistan)</item>
+        <item>Hintçe (Hindistan)</item>
+        <item>Kannadaca (Hindistan)</item>
+        <item>Malayalam (Hindistan)</item>
+        <item>Marathi (Hindistan)</item>
+        <item>Nepalce (Nepal)</item>
+        <item>Oriya (Hindistan)</item>
+        <item>Pencap (Hindistan)</item>
+        <item>Tamilce (Hindistan)</item>
+        <item>Telugu (Hindistan)</item>
+        <item>Urduca (Pakistan)</item>
+        <item>Khmer (Kamboçya)</item>
+        <item>Ukraynaca (Ukrayna)</item>
+        <item>Türkçe (Türkiye)</item>
+        <item>Tayca (Tayca)</item>
+        <item>Portekizce (Brezilya)</item>
+        <item>Rusça (Rusya)</item>
+        <item>Filipince (Filipinler)</item>
+        <item>Almanca (Almanya)</item>
+        <item>Çekçe (Çekya)</item>
+        <item>Felemenkçe (Hollanda)</item>
+        <item>Fransızca (Fransa)</item>
+        <item>İtalyanca (İtalya)</item>
+        <item>Lehçe (Polonya)</item>
+        <item>Endonezce (Endonezya)</item>
+        <item>Kürtçe</item>
+        <item>İsveççe (İsveç)</item>
+        <item>Kürtçe (Kurmanci)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Yeni kelime keşfi</item>
+        <item>Varlık tanıma modeli</item>
+    </string-array>
+</resources>

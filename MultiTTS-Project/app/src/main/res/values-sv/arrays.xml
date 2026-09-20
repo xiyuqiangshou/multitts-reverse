@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Inställningar</item>
+        <item>Byt röst</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Engelska</item>
+        <item>Kinesiska (Förenklad)</item>
+        <item>Spanska (Spanien)</item>
+        <item>Spanska (Europeiska unionen)</item>
+        <item>Spanska (Colombia)</item>
+        <item>Spanska (USA)</item>
+        <item>Arabiska</item>
+        <item>Vietnamesiska (Vietnam)</item>
+        <item>Bengaliska (Indien)</item>
+        <item>Gujarati (Indien)</item>
+        <item>Hindi (Indien)</item>
+        <item>Kannada (Indien)</item>
+        <item>Malayalam (Indien)</item>
+        <item>Marathi (Indien)</item>
+        <item>Nepali (Nepal)</item>
+        <item>Oriya (Indien)</item>
+        <item>Panjabi (Indien)</item>
+        <item>Tamil (Indien)</item>
+        <item>Telugu (Indien)</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Khmer (Kambodja)</item>
+        <item>Ukrainska (Ukraina)</item>
+        <item>Turkiska (Turkiet)</item>
+        <item>Thailändska (Thailand)</item>
+        <item>Portugisiska (Brasilien)</item>
+        <item>Ryska (Ryssland)</item>
+        <item>Filippinska (Filippinerna)</item>
+        <item>Tyska (Tyskland)</item>
+        <item>Tjeckiska (Tjeckien)</item>
+        <item>Nederländska (Nederländerna)</item>
+        <item>Franska (Frankrike)</item>
+        <item>Italienska (Italien)</item>
+        <item>Polska (Polen)</item>
+        <item>Indonesiska (Indonesien)</item>
+        <item>Centralkurdiska (کوردیی ناوەندی)</item>
+        <item>Svenska (Sverige)</item>
+        <item>Kurmancî (Kurdî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Lära sig nya ord</item>
+        <item>Objektigenkänningsmodell</item>
+    </string-array>
+</resources>

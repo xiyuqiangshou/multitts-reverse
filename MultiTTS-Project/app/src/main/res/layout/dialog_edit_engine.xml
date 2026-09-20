@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="20.0dp" android:paddingEnd="20.0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50.0dp" android:layout_marginTop="8.0dp" android:layout_marginBottom="5.0dp">
+            <TextView android:textSize="19.0sp" android:textColor="?cardTextColor" android:gravity="start|center" android:id="@id/engine_edit_title" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/edit_engine" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" app:layout_constraintEnd_toStartOf="@id/engine_login" app:layout_constraintStart_toStartOf="parent" app:layout_constraintWidth_default="percent" app:layout_constraintWidth_percent="0.88" />
+            <androidx.appcompat.widget.AppCompatImageButton android:gravity="center" android:id="@id/engine_login" android:background="?android:selectableItemBackgroundBorderless" android:padding="4.5dp" android:layout_width="0.0dp" android:layout_height="match_parent" android:src="@drawable/ic_login" android:scaleType="fitCenter" android:contentDescription="@string/desc_login" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/engine_edit_title" app:layout_constraintWidth_percent="0.12" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/engine_name" android:layout_weight="5.0" android:layout_marginEnd="5.0dp" app:endIconMode="none" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/engine_edit_name" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/engine_type" android:layout_weight="5.0" android:layout_marginStart="5.0dp" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView android:textSize="14.0sp" android:id="@id/engine_edit_type" android:padding="2.0dp" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="match_parent" android:layout_height="47.0dp" android:popupBackground="?dropDownBgColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/engine_code" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/engine_edit_code" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/engine_param" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/engine_param" app:endIconMode="none" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/engine_edit_param" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/engine_url" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/engine_url" app:endIconMode="none" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/engine_edit_url" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/engine_header" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/engine_header" app:endIconMode="none" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/engine_edit_header" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/engine_note" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:hint="@string/engine_note" app:endIconMode="none" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/engine_edit_note" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

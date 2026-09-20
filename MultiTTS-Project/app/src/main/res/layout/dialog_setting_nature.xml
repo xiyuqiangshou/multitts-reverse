@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="20.0dp" android:paddingEnd="20.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="?cardTextColor" android:gravity="center" android:id="@id/nature_title" android:paddingTop="15.0dp" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/title_test_result" />
+    <TextView android:textStyle="bold" android:textColor="?cardTextColor" android:paddingTop="5.0dp" android:paddingBottom="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/title_input" />
+    <TextView android:textColor="?cardTextColor" android:id="@id/original_text" android:paddingTop="5.0dp" android:paddingBottom="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:textIsSelectable="true" />
+    <TextView android:textStyle="bold" android:textColor="?cardTextColor" android:paddingTop="5.0dp" android:paddingBottom="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/title_output" />
+    <TextView android:textColor="?cardTextColor" android:id="@id/output_names" android:paddingTop="5.0dp" android:paddingBottom="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:textIsSelectable="true" />
+</androidx.appcompat.widget.LinearLayoutCompat>

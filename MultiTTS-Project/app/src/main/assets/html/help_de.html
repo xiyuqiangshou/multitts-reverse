@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Hilfe</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: _FONT_COLOR_;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Grundlegende Bedienung</h4>
+    <ul>
+        <li>Tippen, um die Haupt-Synthese-Engine auszuwählen/abzuwählen</li>
+        <li>Langes Drücken, um die Dialog-Synthese-Engine auszuwählen/abzuwählen</li>
+        <li>Langes Drücken auf den Avatar, um den Sprecher zu bearbeiten</li>
+        <li>Langes Drücken auf das Offline-/Online-Symbol, um den Sprecher zu löschen</li>
+        <li>Den Namen des Sprechers gedrückt halten und nach oben oder unten ziehen, um die Reihenfolge zu ändern</li>
+        <li>Den Namen des Sprechers gedrückt halten und nach links oder rechts wischen, um zu löschen</li>
+        <li>Für andere Listen: nach links und rechts wischen zum Löschen, nach oben und unten ziehen zum Sortieren</li>
+        <li>Die Hauptoberfläche oben in der Liste nach unten ziehen, um die Stapelverwaltungsoberfläche anzuzeigen</li>
+    </ul>
+</div>
+<div>
+    <h4>Funktionsbeschreibung</h4>
+    <ul>
+        <li>Daten importieren: Wählen Sie ein komprimiertes Paket mit unterstützten Engine-Daten zum Importieren. Die erste Ebene der ZIP-Datei muss eine gültige config.yaml enthalten.</li>
+        <li>Ersetzung: Die Aussprache von Wörtern kann in dieser Oberfläche korrigiert werden. Sowohl normale als auch reguläre Ersetzung wird unterstützt.</li>
+        <li>Hintergrundmusik: Hintergrundmusik während der Sprachausgabe abspielen.</li>
+        <li>Rollenverwaltung: Regeln hinzufügen, um Rollen im zu lesenden Text zu identifizieren und bestimmte Sprecher zuzuweisen.</li>
+        <li>Stimmenpool: Für jede Figur, die einer abstrakten Rolle entspricht, wird eine Stimme aus dem Pool ausgewählt und zugewiesen.</li>
+        <li>Engine-Verwaltung: Daten für Engines bearbeiten, hinzufügen, löschen, sortieren und exportieren.</li>
+        <li>Daten neu laden: Konfigurationsdatei erneut lesen und Daten laden. Standardmäßig aus der Datenbank.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Rollenverwaltung</h4>
+    <ul>
+        <li>Rollenname: Der Name der Rolle, die abgeglichen werden soll.</li>
+        <li>Regulärer Ausdruck für Rolle: Ein regulärer Ausdruck, der den Rollennamen abgleicht. Wenn nicht ausgefüllt, wird der Rollenname selbst verwendet.</li>
+        <li>Abstrakte Rolle: Wenn deaktiviert, verwenden alle passenden Figuren dieselbe Stimme. Wenn aktiviert, handelt es sich um eine abstrakte Rolle (mehrere spezifische Figuren), und jede Figur erhält eine Stimme aus dem Pool.</li>
+        <li>Vorwärtssuche: Die Regel gleicht den Text vor dem Gespräch ab.</li>
+        <li>Rückwärtssuche: Die Regel gleicht den Text nach dem Gespräch ab.</li>
+        <li>Abgleichmodus:
+            <ul>
+                <li>Text: Gleiche allen Text ab, der dem regulären Ausdruck entspricht.</li>
+                <li>Sprache: Gleiche Text ab, der der gewählten Sprache entspricht.</li>
+                <li>Rolle: Gleiche den Sprecher des Dialoginhalts ab.</li>
+            </ul>
+        </li>
+        <li>Die Software führt zuerst alle Vorwärtsabgleiche aus. Nur wenn keine Ergebnisse vorliegen, werden Rückwärtsabgleiche durchgeführt.</li>
+        <li>In der Rollenverwaltungsoberfläche: Langes Drücken der Hinzufügen-Schaltfläche, um Kandidaten-Sprecher für Sprachen hinzuzufügen.</li>
+    </ul>
+</div>
+<div>
+    <h4>Engine-Verwaltung</h4>
+    <ul>
+        <li>Typ: Engine-Typ. Derzeit kann nur die HTTP-Engine hinzugefügt werden.</li>
+        <li>Code: Interne Bezeichnung der Engine. Bitte nur alphanumerische Zeichen und Unterstriche verwenden.</li>
+        <li>Anfrage-Header: Der verwendete Header bei HTTP-Anfragen.</li>
+        <li>URL: HTTP-Link. Bitte JavaScript-Ausdrücke in {{}} einschließen.</li>
+        <li>Unterstützte Werte in URLs:
+            <ul>
+                <li>voiceCode: Sprecher-Code</li>
+                <li>speakText: Der zu synthetisierende Text</li>
+                <li>speakSpeed: Sprachgeschwindigkeit, Wertebereich 0~100</li>
+                <li>speakVolume: Lautstärke, Wertebereich 0~100</li>
+                <li>params: Parameter-Array, entsprechend den Parametern des Sprechers</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Stimmenpool</h4>
+    <ul>
+        <li>Abstrakte Rolle: Abstrakte Rolle, die in der Rollenverwaltung definiert wurde.</li>
+        <li>Charakterstimme: Jede spezifische Figur, die der abstrakten Rolle entspricht, erhält eine Stimme aus derselben Gruppe.</li>
+    </ul>
+</div>
+<div>
+    <h4>Einstellungen</h4>
+    <ul>
+        <li>Regeln für Rollenabgleich: Zum Filtern gültiger Kontexte beim Abgleichen von Dialogrollen. Verwenden Sie _ROLE_ für die Rolle und _OTHER_ für andere Rollen.</li>
+        <li>Grammatikalische Strukturanalyse (nur Chinesisch): Analysiert einen Text, markiert ihn mit Wortarten und erstellt die Satzstruktur.</li>
+        <li>Automatische Stimmenzuweisung: Nach Erkennung einer Person automatisch Stimmen aus dem Rollenpool zuweisen (abstrakte Rollen müssen definiert sein). Die Zuweisung wird zwischengespeichert, bis sie überschrieben wird.</li>
+        <li>Analyse neuer Zeichen (nur Chinesisch): Neue Wörter im Text analysieren. Nach Abschluss auf „Speichern“ klicken, um die Figur in der Verwaltung zu erstellen.</li>
+        <li>Regulärer Ausdruck für Namen: Zum Filtern von Namen, die in der Textanalyse erkannt werden.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Weiterleitung</h4>
+    <ul>
+        <li>Text-to-Speech-Schnittstelle ( http://localhost:8774/forward ), GET-Parameter:
+            <ul>
+                <li>text: Zu synthetisierender Text</li>
+                <li>speed: Sprachgeschwindigkeit, Wertebereich 0~100</li>
+                <li>volume: Lautstärke, Wertebereich 0~100</li>
+                <li>pitch: Tonhöhe, Wertebereich 0~100</li>
+                <li>voice: Voice-ID, mit /voices alle verfügbaren Sprecher abrufen</li>
+            </ul>
+        </li>
+        <li>Stimmenliste-Schnittstelle ( http://localhost:8774/voices ), keine Parameter.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Benutzerdefinierte Tags</h4>
+    <ul>
+        <li><strong>[[Custom Tag]]</strong> Inhalte in diesem Format werden als Tag behandelt und nicht synthetisiert.</li>
+        <li><strong>[[PAUSE:1000]]</strong> Gibt eine Pause von 1000 ms an.</li>
+        <li><strong>[[SPEED:1.2]]</strong> Setzt die Sprechgeschwindigkeit auf das 1,2-fache.</li>
+        <li><strong>[[PITCH:1.2]]</strong> Setzt die Tonhöhe auf das 1,2-fache.</li>
+        <li><strong>[[VOLUME:1.2]]</strong> Setzt die Lautstärke auf das 1,2-fache.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Sonstiges</h4>
+    <ul>
+        <li>Um den Sprecher manuell im Text festzulegen, den Namen in &lt;&lt;&gt;&gt; einfügen. Beispiel: "&lt;&lt;John&gt;&gt;Dieser Satz wird von mir gesprochen."</li>
+        <li>Wenn die App im Hintergrund beendet wird, aktivieren Sie bitte Berechtigungen wie Akku-Optimierung, Hintergrundlauf, Autostart und Energiesparen (abhängig vom Gerät).</li>
+        <li>Wenn beim Importieren eines ZIP-Pakets eine Fehlermeldung mit „zip“ erscheint, könnte beim Herunterladen ein Fehler aufgetreten sein.</li>
+        <li>Wenn die Software abstürzt, wird das Protokoll in die Zwischenablage kopiert. Bitte fügen Sie es beim Melden bei.</li>
+        <li>Aktuelle Version: v_VERSION_NAME_</li>
+        <li>Android-ID: _ANDROID_ID_</li>
+    </ul>
+</div>
+
+</body>
+</html>

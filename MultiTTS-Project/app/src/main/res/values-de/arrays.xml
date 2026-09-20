@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Einstellungen</item>
+        <item>Stimme ändern</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Englisch</item>
+        <item>Chinesisch (Vereinfacht)</item>
+        <item>Spanisch (Spanien)</item>
+        <item>Spanisch (Europäische Union)</item>
+        <item>Spanisch (Kolumbien)</item>
+        <item>Spanisch (USA)</item>
+        <item>Arabisch</item>
+        <item>Vietnamesisch (Vietnam)</item>
+        <item>Bengalisch (Indien)</item>
+        <item>Gujarati (Indien)</item>
+        <item>Hindi (Indien)</item>
+        <item>Kannada (Indien)</item>
+        <item>Malayalam (Indien)</item>
+        <item>Marathi (Indien)</item>
+        <item>Nepali (Nepal)</item>
+        <item>Oriya (Indien)</item>
+        <item>Punjabi (Indien)</item>
+        <item>Tamil (Indien)</item>
+        <item>Telugu (Indien)</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Khmer (Kambodscha)</item>
+        <item>Ukrainisch (Ukraine)</item>
+        <item>Türkisch (Türkei)</item>
+        <item>Thailändisch (Thailand)</item>
+        <item>Portugiesisch (Brasilien)</item>
+        <item>Russisch (Russland)</item>
+        <item>Filipino (Philippinen)</item>
+        <item>Deutsch (Deutschland)</item>
+        <item>Tschechisch (Tschechien)</item>
+        <item>Niederländisch (Niederlande)</item>
+        <item>Französisch (Frankreich)</item>
+        <item>Italienisch (Italien)</item>
+        <item>Polnisch (Polen)</item>
+        <item>Indonesisch (Indonesien)</item>
+        <item>Zentralkurdisch (کوردیی ناوەندی)</item>
+        <item>Schwedisch (Schweden)</item>
+        <item>Kurmandschi (Kurdî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Neue Wörter lernen</item>
+        <item>Objekterkennungsmodell</item>
+    </string-array>
+</resources>

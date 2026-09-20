@@ -1,0 +1,134 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'org.nobody.multitts'
+    compileSdk 35
+    buildToolsVersion '35.0.1'
+
+    defaultConfig {
+        applicationId 'org.nobody.multitts'
+        minSdk 21
+        targetSdk 35
+        versionCode 84
+        versionName '1.8.3'
+        multiDexEnabled true
+        // 原包自带的原生引擎（sherpa-onnx / HanLP / 各厂商 TTS SDK）
+        // 已按原 ABI 目录放在 src/main/jniLibs，不要额外过滤
+        ndk { abiFilters 'arm64-v8a', 'armeabi-v7a' }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        // 【2026-09-18 实测结论】deps.jar 整体是「已脱糖」产物（库代码里已有
+        // implements Lj$/util/concurrent/ConcurrentMap 这类 j$ 引用）。
+        //  - 开 coreLibraryDesugaring → D8 报 `Code has already been library desugared`（方向错）
+        //  - j$ 与其它类混在一个 jar → D8 报 `Merging DEX file ... j$. ... not allowed`
+        // 故：关闭 desugar，并把 j$.* 与 java.* 单独拆进 libs/desugar_lib.jar（D8 规则只允许
+        // j$ 与 java. 前缀同 dex）。
+        coreLibraryDesugaringEnabled false
+    }
+
+    packagingOptions {
+        // 原 APK 里这些文件不压缩，保持一致
+        resources {
+            excludes += ['META-INF/*.kotlin_module']
+        }
+        jniLibs { useLegacyPackaging = true }
+        dex { useLegacyPackaging = true }
+    }
+
+    // 源码树里有大量 R8 压平后的单字母包名（o / R / h / g0 ...），
+    // 大小写不同的同名类必须共存 —— 构建目录需开启 NTFS 区分大小写，
+    // 否则 o/g.java 会覆盖 o/G.java。启用方式见 README。
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false      // 代码本身已是混淆后形态，不要再跑 R8
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            // 【dex 收敛实验 2026-09-18】官方 1.8.3 是 R8 产物（3 dex）；
+            // 纯 D8 路径下 AGP 会把工程类按 12 个 bucket 各自成 dex（共 14 dex）。
+            // 改走 R8（配合 proguard-rules.pro 的 -dontobfuscate/-dontshrink/-dontoptimize）
+            // 复现官方管线，同时保证不改名不删类。
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+            assets.srcDirs  = ['src/main/assets']
+        }
+    }
+}
+
+dependencies {
+    // 第三方库以「预编译 dex 反解出的 class」形式提供，避免逐个还原 Maven 坐标。
+    //   三个 jar 的构成：
+    //     deps.jar        = 9,964 类（= 原 11,162 − dex 内 100 个 org/nobody 类 − 549 jq.* − 37 java.*）
+    //     desugar_lib.jar = 549 个 jq.*（原 j$.*，已按 D8 硬规则整体改名 jq）+ 37 个 java.*
+    //     own_extras.jar  = 6 个回补的自有缺失类（见下）
+    //   ⚠️ deps.jar / desugar_lib.jar 这两个同时也是「验证器 L1/L2/L3 的 classpath」，
+    //      改它们必须同步改 mt_deobf/mt_verify*.py，否则验证数字会假变。
+    //   ⚠️ 三者都必须在下面显式 implementation，缺任何一个都会编译失败（不是"可选优化"）。
+    implementation files('libs/deps.jar')
+    // desugar_lib.jar 必须显式挂进来：源码里 AppContext / GsonExtensionsKt / LoginActivity
+    //   三处 `import jq.util.Objects;` 靠它解析；漏挂 → javac 报「程序包 jq.util 不存在」。
+    //   （2026-09-18 13:37 实测踩坑：编辑本文件时误删该行，build#5 编译失败 12 个错误；
+    //     build#4 成功正是因为当时该行还在。D8 另要求 jq.* 与 java.* 同 dex，故合并在一个 jar 里。）
+    implementation files('libs/desugar_lib.jar')
+    // own_extras.jar = 【2026-09-18 回补的自有缺失类】
+    //   jadx 把一批合成类**内联**掉了（Vineflower 反而保留为独立类），源码工程里根本没有它们；
+    //   但它们被「压平包里的二进制胶水类」按名引用（例：b2/V#<init> 直接 new .../ui/main/dialog/a），
+    //   不补回 → 运行期 NoClassDefFoundError。
+    //   6 个类 = 引用闭包收敛结果（见 mt_deobf/mk_own_extras.py，已做 j$→jq 改名）：
+    //     ui/common/a、ui/main/dialog/{a,d,e}、ui/main/dialog/SpeakerEditorDialog${2,3}
+    //   ⚠️ 这是「为保证运行期符号可解析」的回补，不是源码；源码化是后续可选项。
+    implementation files('libs/own_extras.jar')
+}
+
+// javac 在「显式源文件列表」里会静默丢弃「同包内大小写仅差一处的兄弟源文件」
+// 中的后一个（本工程 org/nobody/multitts/ui/setting/ 下 a.java 与 A.java 共存，
+// 实测 a.java 从未被解析）。sourcepath 兜底能把被丢弃的文件找回来。
+// 详见 D:\GameSourceCollection\4_Java\APK100%逆向技能指导.md 第 20.5 节。
+tasks.withType(JavaCompile).configureEach {
+    options.sourcepath = files('src/main/java')
+}
+
+// 【2026-09-18 修复】clean 之后 app/build 被整体删除重建，NTFS 区分大小写属性随之丢失，
+// 于是 javac 的输出目录里 A.class 与 a.class 互相覆盖（NTFS 不区分大小写），
+// dexBuilderDebug 会报：
+//   Class content provided for type descriptor org.nobody.multitts.ui.setting.A
+//   actually defines class org.nobody.multitts.ui.setting.a
+// 注意 fsutil 只能在【空目录】上设置该属性，且新子目录会自动继承。
+// 这里在 javac 执行前把「输出类目录」检查/修复一遍，保证 clean 后仍可构建。
+def ensureCaseSensitiveDir = { File dir ->
+    if (!dir.exists()) dir.mkdirs()
+    if (!dir.isDirectory()) return
+    def probe = new ProcessBuilder('fsutil.exe', 'file', 'queryCaseSensitiveInfo', dir.absolutePath)
+            .redirectErrorStream(true).start()
+    def out = probe.inputStream.getText('GBK'); probe.waitFor()
+    if (out.contains('已启用') || out.toLowerCase().contains('enabled')) return
+    if (dir.listFiles()?.length) {
+        logger.warn("[CS] ${dir} 未开启区分大小写且目录非空，无法自动修复。" +
+                "请关闭 gradle 后手动执行： fsutil.exe file setCaseSensitiveInfo \"${dir}\" enable")
+        return
+    }
+    def set = new ProcessBuilder('fsutil.exe', 'file', 'setCaseSensitiveInfo', dir.absolutePath, 'enable')
+            .redirectErrorStream(true).start()
+    set.inputStream.getText('GBK'); set.waitFor()
+    logger.lifecycle("[CS] 已为 ${dir} 开启 NTFS 区分大小写")
+}
+tasks.withType(JavaCompile).configureEach {
+    doFirst { ensureCaseSensitiveDir(destinationDirectory.get().asFile) }
+}

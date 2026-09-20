@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:paddingTop="12.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="20.0dp" android:paddingEnd="20.0dp">
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/role_match_mode_box" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/role_match_mode" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/role_match_mode" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/role_name" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/role_edit_name" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/role_edit_regex_box" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/role_regex" app:endIconMode="clear_text" app:endIconTint="?colorPrimary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/role_edit_regex" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:id="@id/role_secondary_lang_box" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/role_secondary_lang" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/role_secondary_lang" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/voice_engine_group" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/role_edit_engine_group" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/role_speaker_name" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/role_edit_speaker_name" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:theme="@style/Theme.MultiTTS.TextInputEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:hint="@string/role_group" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@id/role_edit_group" android:layout_width="match_parent" android:layout_height="match_parent" android:popupBackground="?dropDownBgColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50.0dp" android:baselineAligned="false">
+            <com.google.android.material.textview.MaterialTextView android:gravity="center" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/match_abstract" android:layout_weight="2.0" />
+            <androidx.appcompat.widget.AppCompatCheckBox android:id="@id/role_match_abstract" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" />
+            <com.google.android.material.textview.MaterialTextView android:gravity="center" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/match_activate" android:layout_weight="2.0" />
+            <androidx.appcompat.widget.AppCompatCheckBox android:id="@id/role_activate" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="40.0dp" android:baselineAligned="false">
+            <com.google.android.material.textview.MaterialTextView android:gravity="center" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/match_before" android:layout_weight="2.0" />
+            <androidx.appcompat.widget.AppCompatCheckBox android:id="@id/role_match_before" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" />
+            <com.google.android.material.textview.MaterialTextView android:gravity="center" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/match_after" android:layout_weight="2.0" />
+            <androidx.appcompat.widget.AppCompatCheckBox android:id="@id/role_match_after" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

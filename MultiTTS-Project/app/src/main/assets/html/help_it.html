@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Aiuto</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: _FONT_COLOR_;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Operazioni di base</h4>
+    <ul>
+        <li>Tocca per selezionare/deselezionare il motore di sintesi principale</li>
+        <li>Premi a lungo per selezionare/deselezionare il motore di sintesi del dialogo</li>
+        <li>Premi a lungo sull’avatar per modificare l’oratore</li>
+        <li>Premi a lungo sull’icona online/offline per eliminare l’oratore</li>
+        <li>Tieni premuto il nome dell’oratore e trascina in alto o in basso per ordinare</li>
+        <li>Tieni premuto il nome dell’oratore e scorri a sinistra o a destra per eliminare</li>
+        <li>Per altre liste: scorri a sinistra/destra per eliminare, trascina in alto/in basso per ordinare</li>
+        <li>Nell’interfaccia principale, scorri verso il basso dall’alto della lista per visualizzare la gestione batch</li>
+    </ul>
+</div>
+<div>
+    <h4>Descrizione delle funzioni</h4>
+    <ul>
+        <li>Importa dati: seleziona un pacchetto compresso contenente i dati supportati. Il primo livello del file zip deve contenere un file config.yaml valido.</li>
+        <li>Sostituzione: la pronuncia delle parole può essere corretta in questa interfaccia. Supporta sostituzioni normali e regolari.</li>
+        <li>Musica di sottofondo: riproduci musica durante la sintesi vocale.</li>
+        <li>Gestione dei ruoli: aggiungi regole per identificare i ruoli nel testo e assegnare oratori specifici.</li>
+        <li>Pool di voci: per ogni personaggio corrispondente a un ruolo astratto, viene assegnata una voce dal pool.</li>
+        <li>Gestione dei motori: modifica, aggiungi, elimina, ordina ed esporta i dati dei motori.</li>
+        <li>Ricarica dati: rileggi il file di configurazione e carica i dati. Per impostazione predefinita dalla banca dati.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Gestione dei ruoli</h4>
+    <ul>
+        <li>Nome del ruolo: il nome del ruolo da abbinare.</li>
+        <li>Espressione regolare del ruolo: espressione che corrisponde al nome. Se non compilato, viene usato il nome del ruolo.</li>
+        <li>Ruolo astratto: se disabilitato tutti i personaggi corrispondenti usano la stessa voce; se abilitato, ogni personaggio riceve una voce diversa dal pool.</li>
+        <li>Match in avanti: la regola abbina il testo prima del dialogo.</li>
+        <li>Match all’indietro: la regola abbina il testo dopo il dialogo.</li>
+        <li>Modalità di abbinamento:
+            <ul>
+                <li>Testo: abbina tutto il testo conforme all’espressione regolare.</li>
+                <li>Lingua: abbina testo che corrisponde alla lingua selezionata.</li>
+                <li>Ruolo: abbina l’oratore del dialogo.</li>
+            </ul>
+        </li>
+        <li>Il software esegue prima tutti i match in avanti, poi solo se non ci sono risultati esegue i match all’indietro.</li>
+        <li>Nell’interfaccia di gestione dei ruoli: premi a lungo il pulsante Aggiungi per aggiungere oratori candidati.</li>
+    </ul>
+</div>
+<div>
+    <h4>Gestione dei motori</h4>
+    <ul>
+        <li>Tipo: tipo di motore. Attualmente è possibile aggiungere solo motori HTTP.</li>
+        <li>Codice: nome interno del motore. Usa solo caratteri alfanumerici e underscore.</li>
+        <li>Intestazione richiesta: header HTTP utilizzato nelle richieste.</li>
+        <li>URL: link HTTP. Inserisci espressioni JavaScript tra {{}}.</li>
+        <li>Valori supportati negli URL:
+            <ul>
+                <li>voiceCode: codice dell’oratore</li>
+                <li>speakText: testo da sintetizzare</li>
+                <li>speakSpeed: velocità, valore 0~100</li>
+                <li>speakVolume: volume, valore 0~100</li>
+                <li>params: array di parametri corrispondente ai parametri dell’oratore</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Pool di voci</h4>
+    <ul>
+        <li>Ruolo astratto: definito nella gestione dei ruoli.</li>
+        <li>Voce del personaggio: ogni personaggio corrispondente a un ruolo astratto riceve una voce dal gruppo.</li>
+    </ul>
+</div>
+<div>
+    <h4>Impostazioni</h4>
+    <ul>
+        <li>Regole di abbinamento ruoli: usate per filtrare i contesti validi. Usa _ROLE_ per il ruolo e _OTHER_ per gli altri.</li>
+        <li>Analisi della struttura grammaticale (solo cinese): analizza un testo e ne determina la struttura.</li>
+        <li>Assegnazione automatica delle voci: dopo aver riconosciuto un personaggio, assegna automaticamente una voce dal pool. Le assegnazioni vengono memorizzate nella cache.</li>
+        <li>Analisi del testo (solo cinese): analizza nuove parole. Dopo clic su Salva viene creato un nuovo personaggio.</li>
+        <li>Espressione regolare per nomi: filtra i nomi rilevati durante l’analisi del testo.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Inoltro</h4>
+    <ul>
+        <li>Interfaccia TTS ( http://localhost:8774/forward ), parametri GET:
+            <ul>
+                <li>text: testo da sintetizzare</li>
+                <li>speed: velocità, valore 0~100</li>
+                <li>volume: volume, valore 0~100</li>
+                <li>pitch: tono, valore 0~100</li>
+                <li>voice: ID voce, usa /voices per ottenere l’elenco</li>
+            </ul>
+        </li>
+        <li>Interfaccia elenco voci ( http://localhost:8774/voices ), nessun parametro.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Tag personalizzati</h4>
+    <ul>
+        <li><strong>[[Custom Tag]]</strong> Il contenuto racchiuso in questo formato è trattato come tag e non sintetizzato.</li>
+        <li><strong>[[PAUSE:1000]]</strong> Pausa di 1000 ms.</li>
+        <li><strong>[[SPEED:1.2]]</strong> Imposta la velocità a 1,2 volte.</li>
+        <li><strong>[[PITCH:1.2]]</strong> Imposta il tono a 1,2 volte.</li>
+        <li><strong>[[VOLUME:1.2]]</strong> Imposta il volume a 1,2 volte.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Altro</h4>
+    <ul>
+        <li>Per specificare manualmente l’oratore nel testo, racchiudi il nome in &lt;&lt;&gt;&gt;. Esempio: "&lt;&lt;Giovanni&gt;&gt;Questa frase è detta da me."</li>
+        <li>Se l’app viene terminata in background, attiva permessi come ottimizzazione batteria, esecuzione in background, avvio automatico e impedisci sospensione (a seconda del dispositivo).</li>
+        <li>Se compare un errore contenente “zip” durante l’importazione, il file potrebbe essere danneggiato.</li>
+        <li>In caso di crash, il log viene copiato negli appunti. Includilo nella segnalazione del problema.</li>
+        <li>Versione attuale: v_VERSION_NAME_</li>
+        <li>ID Android: _ANDROID_ID_</li>
+    </ul>
+</div>
+
+</body>
+</html>

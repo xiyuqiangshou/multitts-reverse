@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Pomoc</title>
+    <style type="text/css">
+        body {
+            padding:0 12px;
+            color: _FONT_COLOR_;
+        }
+
+        div{
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+        .fuckTop{
+            margin-top: -3px;
+        }
+        table,tr{
+            width: 100%;
+        }
+        table td:first-child{
+            width: 20%;
+        }
+        table td:nth-child(2){
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h4>Podstawowa obsługa</h4>
+    <ul>
+        <li>Kliknij, aby wybrać/odznaczyć główny silnik syntezy</li>
+        <li>Długie naciśnięcie, aby wybrać/odznaczyć silnik syntezy dialogów</li>
+        <li>Długie naciśnięcie na awatarze, aby edytować mówcę</li>
+        <li>Długie naciśnięcie ikony online/offline, aby usunąć mówcę</li>
+        <li>Przytrzymaj nazwę mówcy i przeciągnij w górę lub w dół, aby posortować</li>
+        <li>Przytrzymaj nazwę mówcy i przesuń w lewo lub w prawo, aby usunąć</li>
+        <li>W innych listach: przesuń w lewo/prawo, aby usunąć, przeciągnij w górę/dół, aby sortować</li>
+        <li>Na głównym ekranie przeciągnij w dół z góry listy, aby wyświetlić interfejs zarządzania wsadowego</li>
+    </ul>
+</div>
+<div>
+    <h4>Opis funkcji</h4>
+    <ul>
+        <li>Import danych: wybierz spakowany plik ZIP zawierający dane silnika. Pierwszy poziom musi zawierać plik config.yaml.</li>
+        <li>Zamiana: poprawa wymowy słów w tym interfejsie. Obsługuje zwykłą i regularną zamianę.</li>
+        <li>Muzyka w tle: odtwarzanie muzyki podczas syntezy mowy.</li>
+        <li>Zarządzanie rolami: dodaj reguły, aby rozpoznawać role w tekście i przypisywać określonych mówców.</li>
+        <li>Pula głosów: dla każdej postaci pasującej do roli abstrakcyjnej wybierany jest głos z puli.</li>
+        <li>Zarządzanie silnikami: edycja, dodawanie, usuwanie, sortowanie i eksport danych.</li>
+        <li>Ponowne ładowanie danych: ponowne wczytanie konfiguracji i danych. Domyślnie z bazy danych.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Zarządzanie rolami</h4>
+    <ul>
+        <li>Nazwa roli: nazwa roli do dopasowania.</li>
+        <li>Wyrażenie regularne roli: dopasowuje nazwę roli. Jeśli puste, używana jest nazwa roli.</li>
+        <li>Rola abstrakcyjna: jeśli wyłączona – wszystkie postacie używają tego samego głosu; jeśli włączona – każda postać otrzymuje głos z puli.</li>
+        <li>Dopasowanie w przód: reguła dopasowuje tekst przed dialogiem.</li>
+        <li>Dopasowanie wstecz: reguła dopasowuje tekst po dialogu.</li>
+        <li>Tryb dopasowania:
+            <ul>
+                <li>Tekst: dopasowuje cały tekst zgodny z wyrażeniem regularnym.</li>
+                <li>Język: dopasowuje tekst w określonym języku.</li>
+                <li>Rola: dopasowuje mówcę dialogu.</li>
+            </ul>
+        </li>
+        <li>Oprogramowanie najpierw wykonuje dopasowania w przód. Jeśli brak wyników, używa dopasowań wstecz.</li>
+        <li>W interfejsie zarządzania rolami: długie naciśnięcie przycisku Dodaj, aby dodać mówców kandydatów.</li>
+    </ul>
+</div>
+<div>
+    <h4>Zarządzanie silnikami</h4>
+    <ul>
+        <li>Typ: typ silnika. Obecnie można dodać tylko silnik HTTP.</li>
+        <li>Kod: wewnętrzna nazwa silnika. Używaj tylko znaków alfanumerycznych i podkreślników.</li>
+        <li>Nagłówek żądania: nagłówek HTTP używany w żądaniach.</li>
+        <li>URL: link HTTP. Wyrażenia JavaScript wstawiaj w {{}}.</li>
+        <li>Obsługiwane wartości w adresach URL:
+            <ul>
+                <li>voiceCode: kod mówcy</li>
+                <li>speakText: tekst do syntezy</li>
+                <li>speakSpeed: prędkość, zakres 0–100</li>
+                <li>speakVolume: głośność, zakres 0–100</li>
+                <li>params: tablica parametrów odpowiadająca parametrom mówcy</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h4>Pula głosów</h4>
+    <ul>
+        <li>Rola abstrakcyjna: zdefiniowana w zarządzaniu rolami.</li>
+        <li>Głos postaci: każda postać pasująca do roli abstrakcyjnej otrzymuje głos z tej samej grupy.</li>
+    </ul>
+</div>
+<div>
+    <h4>Ustawienia</h4>
+    <ul>
+        <li>Zasady dopasowania ról: używane do filtrowania kontekstów. _ROLE_ oznacza rolę, _OTHER_ inne role.</li>
+        <li>Analiza struktury gramatycznej (tylko chiński): oznaczanie tekstu częściami mowy.</li>
+        <li>Automatyczne przypisywanie głosów: po rozpoznaniu osoby głos z puli jest przypisywany automatycznie. Przypisania są zapisywane w pamięci podręcznej.</li>
+        <li>Analiza tekstu (tylko chiński): analiza nowych słów. Kliknij Zapisz, aby dodać nową postać.</li>
+        <li>Wyrażenie regularne dla nazw: filtruje nazwy z analizy tekstu.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Przekierowanie</h4>
+    <ul>
+        <li>Interfejs TTS ( http://localhost:8774/forward ), parametry GET:
+            <ul>
+                <li>text: tekst do syntezy</li>
+                <li>speed: prędkość, zakres 0–100</li>
+                <li>volume: głośność, zakres 0–100</li>
+                <li>pitch: ton, zakres 0–100</li>
+                <li>voice: ID głosu, użyj /voices aby pobrać listę</li>
+            </ul>
+        </li>
+        <li>Interfejs listy głosów ( http://localhost:8774/voices ), brak parametrów.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Tagi niestandardowe</h4>
+    <ul>
+        <li><strong>[[Custom Tag]]</strong> Treść w tym formacie jest traktowana jako tag i nie jest syntezowana.</li>
+        <li><strong>[[PAUSE:1000]]</strong> Pauza 1000 ms.</li>
+        <li><strong>[[SPEED:1.2]]</strong> Ustawia prędkość na 1,2.</li>
+        <li><strong>[[PITCH:1.2]]</strong> Ustawia ton na 1,2.</li>
+        <li><strong>[[VOLUME:1.2]]</strong> Ustawia głośność na 1,2.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>Inne</h4>
+    <ul>
+        <li>Aby ręcznie określić mówcę w tekście, umieść nazwę w &lt;&lt;&gt;&gt;. Przykład: "&lt;&lt;Jan&gt;&gt;To zdanie zostało powiedziane przeze mnie."</li>
+        <li>Jeśli aplikacja zostanie zamknięta w tle, ustaw uprawnienia takie jak optymalizacja baterii, uruchamianie w tle, autostart i zapobieganie uśpieniu (zależnie od telefonu).</li>
+        <li>Jeśli podczas importu pojawi się błąd zawierający „zip”, mogło wystąpić uszkodzenie pliku podczas pobierania.</li>
+        <li>W przypadku awarii dziennik zostanie skopiowany do schowka. Dołącz go, zgłaszając problem.</li>
+        <li>Aktualna wersja: v_VERSION_NAME_</li>
+        <li>ID Androida: _ANDROID_ID_</li>
+    </ul>
+</div>
+
+</body>
+</html>

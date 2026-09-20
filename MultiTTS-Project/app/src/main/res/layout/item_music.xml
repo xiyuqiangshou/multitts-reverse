@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textColor="?cardTextColor" android:id="@id/music_name" android:layout_width="0.0dp" android:layout_height="match_parent" android:paddingStart="25.0dp" android:paddingEnd="25.0dp" app:layout_constraintEnd_toStartOf="@id/music_enable" app:layout_constraintStart_toStartOf="parent" app:layout_constraintWidth_default="percent" app:layout_constraintWidth_percent="0.8" />
+        <ImageView android:id="@id/music_enable" android:padding="2.0dp" android:visibility="invisible" android:layout_width="0.0dp" android:layout_height="20.0dp" android:src="@drawable/shape_dcircle" android:contentDescription="@string/desc_music" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/music_name" app:layout_constraintTop_toTopOf="parent" app:layout_constraintWidth_percent="0.2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View android:background="#475f77" android:layout_width="match_parent" android:layout_height="0.20000005dp" android:layout_marginStart="20.0dp" android:layout_marginEnd="20.0dp" />
+</LinearLayout>

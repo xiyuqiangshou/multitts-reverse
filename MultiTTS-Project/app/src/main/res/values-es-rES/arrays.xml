@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_processor_entries">
+        <item>Fuerte</item>
+        <item>Voz táctil</item>
+    </string-array>
+    <string-array name="language_detector_entries">
+        <item>Optimización</item>
+        <item>En multimedia</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>Inglés</item>
+        <item>Chino simplificado</item>
+        <item>español (España)</item>
+        <item>español (Unión Europea)</item>
+        <item>español (Colombia)</item>
+        <item>español (Estados Unidos)</item>
+        <item>Árabe</item>
+        <item>Vietnamita</item>
+        <item>bengalí (India)</item>
+        <item>gujarati (India)</item>
+        <item>hindi (India)</item>
+        <item>canarés (India)</item>
+        <item>malabar (India)</item>
+        <item>maratí (India)</item>
+        <item>nepalí (Nepal)</item>
+        <item>odia (India)</item>
+        <item>punjabi (India)</item>
+        <item>tamil (India)</item>
+        <item>telugu (India)</item>
+        <item>urdu (Pakistán)</item>
+        <item>jemer (Camboya)</item>
+        <item>ucraniano (Ucrania)</item>
+        <item>Turco (Türkiya)</item>
+        <item>tailandés (Tailandia)</item>
+        <item>português (Brasil)</item>
+        <item>ruso (Rusia)</item>
+        <item>filipino (Filipinas)</item>
+        <item>alemán (Alemania)</item>
+        <item>checo (República Checa)</item>
+        <item>holandés (Países Bajos)</item>
+        <item>francés (Francia)</item>
+        <item>italiano (Italia)</item>
+        <item>polaco (Polonia)</item>
+        <item>Indonesio (Indonesia)</item>
+        <item>kurdo</item>
+        <item>Svenska (Sverige)</item>
+        <item>Kurdî (Kurmancî)</item>
+    </string-array>
+    <string-array name="nda_entries">
+        <item>Descubrimiento de nuevas palabras</item>
+        <item>Modelo bajo</item>
+    </string-array>
+</resources>
