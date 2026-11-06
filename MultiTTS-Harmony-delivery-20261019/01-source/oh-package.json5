@@ -1,0 +1,13 @@
+{
+  "modelVersion": "5.0.0",
+  "name": "multittsharmony",
+  "version": "0.1.0",
+  "description": "MultiTTS HarmonyOS NEXT port - phase 1: httpTTS engine + playback pipeline",
+  "main": "",
+  "author": "multitts-harmony community",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@ohos/hypium": "1.0.17"
+  }
+}

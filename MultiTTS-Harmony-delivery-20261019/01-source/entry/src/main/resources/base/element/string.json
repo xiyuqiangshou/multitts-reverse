@@ -1,0 +1,8 @@
+{
+  "string": [
+    { "name": "module_desc", "value": "MultiTTS 鸿蒙移植主模块" },
+    { "name": "ability_desc", "value": "MultiTTS 鸿蒙主界面" },
+    { "name": "app_name", "value": "MultiTTS 鸿蒙" },
+    { "name": "perm_internet", "value": "联网请求 HTTP TTS 音色服务" }
+  ]
+}

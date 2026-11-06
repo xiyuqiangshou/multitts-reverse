@@ -1,0 +1,7 @@
+# 交付 zip 包不入库(源码已解压在仓库内)
+*.zip
+
+# HarmonyOS 构建产物
+.hvigor/
+entry/build/
+oh_modules/
